@@ -1,0 +1,179 @@
+import clsx from "clsx";
+import Feedbacks from "../components/utils/Feedbacks";
+import Footer from "../components/layout/Footer";
+
+const Home = () => {
+  return (
+    <div className="">
+      <div className="hero bg-[url('/images/hero1.jpeg')] relative  w-full h-100  bg-cover bg-center   ">
+        <div className=" absolute inset-0 bg-black/30 flex flex-col items-center justify-center h-full px-8 py-4 gap-12">
+          <h2 className="text-3xl text-white text-center font-medium ">
+            Boost you company’s productivity
+          </h2>
+          <p className="text-sm text-gray-200 text-center">
+            Jomart engineering services limited is a 21’st sentuar engieering
+            company founded in 2012y{" "}
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-col gap-3 pt-12 pb-8 px-4">
+        <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
+        <h4 className="text-black text-xl font-medium">
+          We are committed to providing the best
+        </h4>
+        <p className="text-gray-800 text-sm font-normal">
+          Jomart Engineering Services Ltd is committed to providing the best in
+          integrated construction solutions. For years, we have delivered
+          high-quality projects built on a foundation of consistency,
+          reliability, and excellence. Our reputation today is the result of our
+          unwavering dedication to quality, speed, efficiency, and total client
+          satisfaction.
+        </p>
+        <h5 className=" text-lg text-center font-medium">Our Goals</h5>
+        <p className="text-sm text-gray-800">
+          We believe in a proactive approach to every aspect of our business,
+          with special emphasis on quality, safety, and on-time delivery.
+        </p>
+        <h5 className="text-lg font-medium text-center"> Our Mission</h5>
+        <p className="text-sm text-gray-800">
+          To deliver exceptional engineering and construction services that not
+          only meet but exceed client expectations—through innovation, skilled
+          workmanship, and an uncompromising commitment to safety and
+          sustainability.
+        </p>
+      </div>
+      <div className="flex flex-col gap-3 px-4 py-4">
+        <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
+          services
+        </h3>
+        <div className="flex gap-3 flex-col">
+          {services.map((item, index) => (
+            <div
+              key={index}
+              className={clsx(
+                `bg-[url('/images/${item.image}')] overflow-hidden rounded-lg h-30 bg-cover bg-center`,
+              )}
+            >
+              <div className="w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
+                <p className="text-xl text-white">{item.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="">
+        <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
+          Team
+        </h3>
+        <div className="py-4 px-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+          {team.map((item, index) => (
+            <div className="flex flex-col" key={index}>
+              <div className="h-40 md:h-50 overflow-hidden">
+                <img
+                  src={`${item.image}`}
+                  alt="image"
+                  className="w-full object-cover "
+                />
+              </div>
+              <h4 className="text-base font-semibold text-center">
+                {item.name}
+              </h4>
+              <p className="text-gray-600 font-medium text-center">
+                {item.position}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="">
+        <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
+          Feedbacks
+        </h3>
+
+        <div className=" min-h-12 h-fit py-4 w-full px-4 flex items-center">
+          <Feedbacks items={feedbacksItems} />
+        </div>
+      </div>
+      <div className="">
+        <Footer />
+      </div>
+    </div>
+  );
+};
+
+const feedbacksItems = [
+  {
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    name: "dummy name",
+  },
+  {
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    name: "dummy name",
+  },
+  {
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    name: "dummy name",
+  },
+  {
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    name: "dummy name",
+  },
+  {
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    name: "dummy name",
+  },
+  {
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    name: "dummy name",
+  },
+  {
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    name: "dummy name",
+  },
+];
+
+const services = [
+  {
+    title: "Architectural Design",
+    image: "achitectural_design.jpeg",
+  },
+  {
+    title: "Architectural Design",
+    image: "achitectural_design.jpeg",
+  },
+  {
+    title: "Architectural Design",
+    image: "achitectural_design.jpeg",
+  },
+  {
+    title: "Architectural Design",
+    image: "achitectural_design.jpeg",
+  },
+];
+
+const team = [
+  {
+    image: "/images/ai_passport_1.jpeg",
+    name: "Engr. Nwanze Tobechukwu Joseph",
+    position: "chairman/founder",
+  },
+  {
+    image: "/images/ai_passport_1.jpeg",
+    name: "Engr. Nwanze Tobechukwu Joseph",
+    position: "chairman/founder",
+  },
+  {
+    image: "/images/ai_passport_1.jpeg",
+    name: "Engr. Nwanze Tobechukwu Joseph",
+    position: "chairman/founder",
+  },
+];
+
+export default Home;
