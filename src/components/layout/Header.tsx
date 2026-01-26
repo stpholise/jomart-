@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { useLocation } from "react-router";
 import clsx from "clsx";
 
 const Header = () => {
+  const location = useLocation();
+  const currentPathname = location.pathname;
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   return (
     <div className="w-full h-14 border-gray-400 border-b flex items-center justify-between gap-12 px-6 py-4">
@@ -18,14 +21,23 @@ const Header = () => {
       </div>
       <div
         className={clsx(
-          " fixed top-0 left-0 bottom-0 right-0 z-15 bg-white w-75  flex flex-col gap-2 py-24 px-12 transform duration-700 h-full",
+          " fixed top-0 left-0 bottom-0 right-0 z-15  w-75 bg-logo-blue flex flex-col gap-1 py-24  transform duration-700 h-full",
           openMenu ? "translate-x-0" : "-translate-x-full",
         )}
       >
+        <button
+          onClick={() => setOpenMenu(false)}
+          className="absolute top-4 right-4 bg-gray-400 p-2 rounded-full h-8 w-8 flex items-center justify-center"
+        >
+          <img src="/icons/close.svg" alt="" className="w-4 h-4" />
+        </button>
         {navLinks.map((item, index) => (
           <Link
             to={item.href}
-            className="text-xl font-medium text-amber-600"
+            className={clsx(
+              "text-xl font-medium  hover:bg-logo-light  px-8  py-2 uppercase",
+              currentPathname == item.href ? "text-white" : "text-primary",
+            )}
             key={index}
             onClick={() => setOpenMenu(false)}
           >
@@ -49,7 +61,6 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Projects", href: "/projects" },
-  { name: "News", href: "/news" },
   { name: "Contact", href: "/contact" },
   { name: "FAQ", href: "/faq" },
 ];
