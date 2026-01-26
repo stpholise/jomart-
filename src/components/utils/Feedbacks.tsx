@@ -15,7 +15,6 @@ const responsive = {
     breakpoint: { max: 460, min: 0 },
     items: 1,
     slidesToSlide: 1,
-
   },
 };
 
@@ -26,31 +25,30 @@ interface Items {
 
 const Feedbacks = ({ items }: { items: Items[] }) => {
   return (
-    <>
+    <div className="container mx-auto mb-8">
       {items && (
         <Carousel
           swipeable
-          showDots 
+          showDots
           className=" w-full"
           responsive={responsive}
           autoPlay={true}
           autoPlaySpeed={1500}
-          infinite={true} 
+          infinite={true}
         >
           {items.map((item, index) => (
-            <div
-              className=" bg-gray-200 py-3 px-3 rounded-lg flex-col flex gap-y-6 mr-4"
-              key={index}
-            >
-              <p className="text-gray-600  font-medium  text-sm">
-                {item.message}
-              </p>
-              <h4 className="text-base font-semibold ">{item.name}</h4>
+            <div className="px-2 sm-px-3" key={index}>
+              <div className=" bg-gray-200 py-3 px-3 rounded-lg flex-col flex gap-y-6 ">
+                <p className="text-gray-600  font-medium  text-sm">
+                  {item.message}
+                </p>
+                <h4 className="text-base font-semibold ">{item.name}</h4>
+              </div>
             </div>
           ))}
         </Carousel>
       )}
-    </>
+    </div>
   );
 };
 

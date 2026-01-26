@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Feedbacks from "../components/utils/Feedbacks";
 import Footer from "../components/layout/Footer";
 
+
 const Home = () => {
   return (
     <div className="">
@@ -16,7 +17,7 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-3 pt-12 pb-8 px-4">
+      <div className="flex flex-col gap-3 pt-12 pb-8 px-4 container mx-auto">
         <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
         <h4 className="text-black text-xl font-medium">
           We are committed to providing the best
@@ -46,36 +47,46 @@ const Home = () => {
         <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
           services
         </h3>
-        <div className="flex gap-3 flex-col">
+        <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {services.map((item, index) => (
             <div
               key={index}
               className={clsx(
-                `bg-[url('/images/${item.image}')] overflow-hidden rounded-lg h-30 bg-cover bg-center`,
+                ` border border-gray-200 px-3 py-3 bg-white shadow cursor-pointer overflow-hidden rounded-lg flex flex-col gap-3  h-fit bg-cover bg-center`,
               )}
             >
-              <div className="w-full h-full bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
-                <p className="text-xl text-white">{item.title}</p>
+              <div className="w-full  h-40 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
+                <img
+                  src={`/images/${item.image}`}
+                  alt=""
+                  className="h-full object-cover w-full "
+                />
               </div>
+              <p className="text-xl text-black font-medium ">{item.title}</p>
+              <p className="text-sm">{item.message}</p>
+              <button className="bg-primary text-white font-medium text-sm py-2 px-4 rounded-lg text-center ">
+                {" "}
+                Request Now
+              </button>
             </div>
           ))}
         </div>
       </div>
-      <div className="">
-        <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
+      <div className="container mx-auto">
+        <h3 className="text-lg text-center mb-3 font-medium text-logo-blue uppercase ">
           Team
         </h3>
-        <div className="py-4 px-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="py-4 px-4 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4">
           {team.map((item, index) => (
             <div className="flex flex-col" key={index}>
-              <div className="h-40 md:h-50 overflow-hidden">
+              <div className=" ">
                 <img
                   src={`${item.image}`}
                   alt="image"
-                  className="w-full object-cover "
+                  className="w-full object-cover first:object-cover h-80 xs:h-40 md:h-50 overflow-hidden object-center"
                 />
               </div>
-              <h4 className="text-base font-semibold text-center">
+              <h4 className="text-base capitalize font-semibold text-center">
                 {item.name}
               </h4>
               <p className="text-gray-600 font-medium text-center">
@@ -143,36 +154,44 @@ const services = [
   {
     title: "Architectural Design",
     image: "achitectural_design.jpeg",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
   },
   {
     title: "Architectural Design",
     image: "achitectural_design.jpeg",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
   },
   {
     title: "Architectural Design",
     image: "achitectural_design.jpeg",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
   },
   {
     title: "Architectural Design",
     image: "achitectural_design.jpeg",
+    message:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
   },
 ];
 
 const team = [
   {
-    image: "/images/ai_passport_1.jpeg",
+    image: "/images/EngrNwanzeTobechukwuJoseph1.jpeg",
     name: "Engr. Nwanze Tobechukwu Joseph",
-    position: "chairman/founder",
+    position: "Chairman/Founder",
   },
   {
-    image: "/images/ai_passport_1.jpeg",
-    name: "Engr. Nwanze Tobechukwu Joseph",
-    position: "chairman/founder",
+    image: "/images/ObuezieOnyekaJeremiah.jpeg",
+    name: "OBUEZIE ONYEKA JEREMIAH",
+    position: "Project Manager",
   },
   {
-    image: "/images/ai_passport_1.jpeg",
-    name: "Engr. Nwanze Tobechukwu Joseph",
-    position: "chairman/founder",
+    image: "/images/MrsUgbomahEgoamaka.jpeg",
+    name: "Mrs Ugbomah Egoamaka",
+    position: "Chief Operation Manager",
   },
 ];
 
