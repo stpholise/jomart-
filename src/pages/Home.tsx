@@ -1,7 +1,5 @@
 import clsx from "clsx";
 import Feedbacks from "../components/utils/Feedbacks";
-import Footer from "../components/layout/Footer";
-
 
 const Home = () => {
   return (
@@ -19,33 +17,78 @@ const Home = () => {
       </div>
       <div className="flex flex-col gap-3 pt-12 pb-8 px-4 container mx-auto">
         <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
-        <h4 className="text-black text-xl font-medium">
-          We are committed to providing the best
-        </h4>
-        <p className="text-gray-800 text-sm font-normal">
-          Jomart Engineering Services Ltd is committed to providing the best in
-          integrated construction solutions. For years, we have delivered
-          high-quality projects built on a foundation of consistency,
-          reliability, and excellence. Our reputation today is the result of our
-          unwavering dedication to quality, speed, efficiency, and total client
-          satisfaction.
-        </p>
-        <h5 className=" text-lg text-center font-medium">Our Goals</h5>
-        <p className="text-sm text-gray-800">
-          We believe in a proactive approach to every aspect of our business,
-          with special emphasis on quality, safety, and on-time delivery.
-        </p>
-        <h5 className="text-lg font-medium text-center"> Our Mission</h5>
-        <p className="text-sm text-gray-800">
-          To deliver exceptional engineering and construction services that not
-          only meet but exceed client expectations—through innovation, skilled
-          workmanship, and an uncompromising commitment to safety and
-          sustainability.
-        </p>
+        <div className="flex flex-col gap-3 md:flex-row">
+          <div className="">
+            <h4 className="text-black text-xl font-medium md:text-3xl mb-2">
+              We are committed to providing the best
+            </h4>
+            <p className="text-gray-800 text-sm font-normal md:text-lg md:font-medium">
+              Jomart Engineering Services Ltd is committed to providing the best
+              in integrated construction solutions. For years, we have delivered
+              high-quality projects built on a foundation of consistency,
+              reliability, and excellence. Our reputation today is the result of
+              our unwavering dedication to quality, speed, efficiency, and total
+              client satisfaction.
+            </p>
+          </div>
+          <div className="flex flex-col  w-full md:w-18/12 gap-4">
+            <div className="px-2 py-2 rounded-lg bg-logo-light">
+              <h5 className=" text-lg text-left font-medium mb-1 text-logo-blue">
+                Our Goals
+              </h5>
+              <p className="text-sm text-gray-100">
+                We believe in a proactive approach to every aspect of our
+                business, with special emphasis on quality, safety, and on-time
+                delivery.
+              </p>
+            </div>
+            <div className="px-2 py-2 rounded-lg bg-logo-light">
+              <h5 className="text-lg font-medium text-left text-logo-blue mb-1">
+                {" "}
+                Our Mission
+              </h5>
+              <p className="text-sm text-gray-100">
+                To deliver exceptional engineering and construction services
+                that not only meet but exceed client expectations—through
+                innovation, skilled workmanship, and an uncompromising
+                commitment to safety and sustainability.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="flex flex-col gap-3 px-4 py-4">
         <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
           services
+        </h3>
+        <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {services.map((item, index) => (
+            <div
+              key={index}
+              className={clsx(
+                ` border border-gray-200 px-3 py-3 bg-white shadow cursor-pointer overflow-hidden rounded-lg flex flex-col gap-3  h-fit bg-cover bg-center`,
+              )}
+            >
+              {/* <div className="w-full  h-40 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
+                <img
+                  src={`/images/${item.image}`}
+                  alt=""
+                  className="h-full object-cover w-full "
+                />
+              </div> */}
+              <p className="text-xl text-black font-medium ">{item.title}</p>
+              <p className="text-sm">{item.message}</p>
+              {/* <button className="bg-primary text-white font-medium text-sm py-2 px-4 rounded-lg text-center ">
+                {" "}
+                Request Now
+              </button> */}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col gap-3 px-4 py-4">
+        <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
+          Projects
         </h3>
         <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {services.map((item, index) => (
@@ -62,15 +105,19 @@ const Home = () => {
                   className="h-full object-cover w-full "
                 />
               </div>
-              <p className="text-xl text-black font-medium ">{item.title}</p>
-              <p className="text-sm">{item.message}</p>
+              {/* <p className="text-xl text-black font-medium ">{item.title}</p>
+              <p className="text-sm">{item.message}</p> */}
               <button className="bg-primary text-white font-medium text-sm py-2 px-4 rounded-lg text-center ">
                 {" "}
-                Request Now
+                See Project
               </button>
             </div>
           ))}
         </div>
+        <button className=" bg-logo-blue w-fit mx-auto py-2 px-4 font-medium text-logo-light sm:text-primary hover:text-logo-light rounded-lg my-2  ">
+          {" "}
+          See All Projects
+        </button>
       </div>
       <div className="container mx-auto">
         <h3 className="text-lg text-center mb-3 font-medium text-logo-blue uppercase ">
@@ -83,7 +130,7 @@ const Home = () => {
                 <img
                   src={`${item.image}`}
                   alt="image"
-                  className="w-full object-cover first:object-cover h-80 xs:h-40 md:h-50 overflow-hidden object-center"
+                  className="w-full object-cover md:object-top  first:object-cover h-80 xs:h-40 md:h-90 overflow-hidden object-center"
                 />
               </div>
               <h4 className="text-base capitalize font-semibold text-center">
@@ -104,9 +151,6 @@ const Home = () => {
         <div className=" min-h-12 h-fit py-4 w-full px-4 flex items-center">
           <Feedbacks items={feedbacksItems} />
         </div>
-      </div>
-      <div className="">
-        <Footer />
       </div>
     </div>
   );
