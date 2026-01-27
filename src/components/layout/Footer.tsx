@@ -57,7 +57,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col gap-3 max-w-60">
-            <h4 className="text-lg text-primary font-semibold">Connect</h4>
+            <h4 className="text-lg text-primary font-semibold">Let's Talk!</h4>
 
             <div className="flex invert gap-3 item-center justify-start px-2">
               <Link
@@ -91,7 +91,7 @@ const Footer = () => {
               className=" text-white text-sm w-full  font-medium text-center rounded-lg bg-primary  py-1.5 px-4 flex items-center justify-center min-w-60"
             >
               {" "}
-              Request a quote
+              Message
             </button>
           </div>
         </div>

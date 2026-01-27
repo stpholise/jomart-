@@ -33,8 +33,9 @@ const Feedbacks = ({ items }: { items: Items[] }) => {
           className=" w-full"
           responsive={responsive}
           autoPlay={true}
-          autoPlaySpeed={1500}
+          autoPlaySpeed={3000}
           infinite={true}
+          transitionDuration={500}
         >
           {items.map((item, index) => (
             <div className="px-2 sm-px-3" key={index}>

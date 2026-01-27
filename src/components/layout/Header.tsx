@@ -21,7 +21,7 @@ const Header = () => {
       </div>
       <div
         className={clsx(
-          " fixed top-0 left-0 bottom-0 right-0 z-15  w-75 bg-logo-blue flex flex-col gap-1 py-24  transform duration-700 h-full",
+          " fixed top-0 left-0 bottom-0 right-0 z-15  w-75 bg-logo-blue flex flex-col gap-1 py-24 px-4  transform duration-700 h-full",
           openMenu ? "translate-x-0" : "-translate-x-full",
         )}
       >
@@ -35,7 +35,7 @@ const Header = () => {
           <Link
             to={item.href}
             className={clsx(
-              "text-xl font-medium  hover:bg-logo-light  px-8  py-2 uppercase",
+              "text-xl font-medium  hover:bg-logo-light border-b border-gray-200  px-4 mb-1  py-2 uppercase",
               currentPathname == item.href ? "text-white" : "text-primary",
             )}
             key={index}
