@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
- 
+
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 import { TrippleSpiner } from "../utils/Loading";
@@ -9,7 +9,7 @@ interface RequestType {
   name: string;
   phone: string;
   email: string;
-  region: string; 
+  region: string;
   type: string;
   image: string;
   building_type: string;
@@ -59,7 +59,7 @@ const RequestForm = ({
           name: values.name,
           phone: values.phone,
           email: values.email,
-          region: values.region, 
+          region: values.region,
           type: values.type,
           building_type: values.building_type,
           num_of_units: values.num_of_units.toString(),
@@ -82,7 +82,7 @@ const RequestForm = ({
 
   return (
     <>
-      <div className="fixed text-[#262626] top-0 left-0 right-0 bottom-0 sm:left-1/2 sm:right-1/2 sm:top-1/2 sm:-translate-1/2 lg:top-3 lg:bottom-1/2 lg:left-1/2 lg:right-1/2 lg:-translate-x-1/2 sm:-translate-x-1/2  w-full rounded-lg px-4 py-4 lg:px-6 lg:py-6 max-w-xl z-80  lg:w-140 lg:h-[96vh] sm:h-200 bg-white shadow-xl">
+      <div className=" fixed text-[#262626] top-0 left-0 right-0 bottom-0 sm:left-1/2 sm:right-1/2 sm:top-1/2 sm:-translate-1/2 lg:top1/2 lg:bottom-1/2 lg:left-1/2 lg:right-1/2 lg:-translate-x-1/2 sm:-translate-x-1/2  w-full rounded-lg px-4 py-4 lg:px-6 lg:py-6 max-w-xl z-80  lg:w-140 lg:max-h-150  sm:h-200 bg-white shadow-xl">
         {loading && (
           <div className="absolute top-1/2 left-1/2 right-1/2 z-50">
             <TrippleSpiner />
@@ -245,7 +245,7 @@ const RequestForm = ({
                     className="text-red-500"
                   />
                 </div>
-                <button className="mt-auto   py-2 w-full bg-primary h-8 rounded-lg text-xs font-semibold text-white">
+                <button className="mt-auto  block py-2 w-full bg-primary h-8 rounded-lg text-xs font-semibold text-white">
                   Submit Request
                 </button>
               </Form>
@@ -255,7 +255,7 @@ const RequestForm = ({
       </div>
       <div
         onClick={() => setOpenRequestForm(false)}
-        className="z-50 fixed top-0 right-0 left-0 bottom-0 bg-[rgba(0,0,0,0.2)]"
+        className="z-50 fixed top-0 right-0 left-0 bottom-0 bg-[rgba(0,0,0,0.3)]"
       ></div>
     </>
   );

@@ -5,10 +5,11 @@ const responsiveness = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 3,
+    slidesToSlide: 1,
   },
   tablet: {
     breakpoint: { max: 1024, min: 460 },
-    items: 2,
+    items: 3,
     slidesToSlide: 1,
   },
   mobile: {
@@ -26,8 +27,8 @@ interface Tesponsive {
 
 interface CarouselProps {
   items: {
-    message: string;
-    name: string;
+    message?: string;
+    name?: string;
   }[];
   responsive?: {
     desktop: Tesponsive;
@@ -44,23 +45,23 @@ const CarouselComponent = ({
     <div>
       <Carousel
         swipeable
-        showDots
+        arrows 
         className=" w-full"
         responsive={responsive}
         autoPlay={true}
-        autoPlaySpeed={0}
+        autoPlaySpeed={3000}
         infinite={true}
         transitionDuration={600}
-        // customTransition="transform 9000ms linear"
-        // additionalTransfrom={0}
       >
         {items.map((item, index) => (
-          <div className="px-2 sm-px-3" key={index}>
-            <div className=" bg-gray-200 py-3 px-3 rounded-lg flex-col flex gap-y-6 ">
-              <p className="text-gray-600  font-medium  text-sm">
-                {item.message}
-              </p>
-              <h4 className="text-base font-semibold ">{item.name}</h4>
+          <div className="px-2 sm-px-3 border border-gray-200 mr-4 rounded-lg h-full " key={index}>
+            <div className="   py-2 px-3 rounded-lg flex-col flex gap-y-6 ">
+              <h4 className="text-xl font-semibold ">{item.name}</h4>
+              {item.message && (
+                <p className="text-gray-200  font-medium  text-base">
+                  {item.message}
+                </p>
+              )}
             </div>
           </div>
         ))}

@@ -19,8 +19,8 @@ const responsive = {
 };
 
 interface Items {
-  message: string;
-  name: string;
+  message?: string;
+  name?: string;
 }
 
 const Feedbacks = ({ items }: { items: Items[] }) => {
