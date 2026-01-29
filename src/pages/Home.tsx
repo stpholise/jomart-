@@ -6,7 +6,7 @@ const Home = () => {
     <div className="">
       <div className="hero bg-[url('/images/hero1.jpeg')] relative  w-full h-100  bg-cover bg-center   ">
         <div className=" absolute inset-0 bg-black/30 flex flex-col items-center justify-center h-full px-8 py-4 gap-12">
-          <h2 className="text-3xl text-white text-center font-medium ">
+          <h2 className=" text-3xl md:text-4xl text-white text-center font-medium ">
             Boost you company’s productivity
           </h2>
           <p className="text-sm text-gray-200 text-center">
@@ -19,10 +19,10 @@ const Home = () => {
         <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
         <div className="flex flex-col gap-3 md:flex-row">
           <div className="">
-            <h4 className="text-black text-xl font-medium md:text-3xl mb-2">
+            <h4 className="text-black text-xl font-semibold md:text-3xl mb-2">
               We are committed to providing the best
             </h4>
-            <p className="text-gray-800 text-sm font-normal md:text-lg md:font-medium">
+            <p className="text-gray-800 text-sm font-normal md:text-base md:font-medium">
               Jomart Engineering Services Ltd is committed to providing the best
               in integrated construction solutions. For years, we have delivered
               high-quality projects built on a foundation of consistency,
@@ -223,7 +223,7 @@ const services = [
 
 const team = [
   {
-    image: "/images/EngrNwanzeTobechukwuJoseph1.jpeg",
+    image: "/images/engr_joe.png",
     name: "Engr. Nwanze Tobechukwu Joseph",
     position: "Chairman/Founder",
   },
