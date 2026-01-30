@@ -19,7 +19,7 @@ const ReadyToStart = () => {
           join our list of satisfied clients. Contact us today to discuss your
           elevator project requirements.
         </p>
-        <div className="flex flex-col  sm:flex-row gap-4 my-2 w-full">
+        <div className="flex flex-col items-center justify-center sm:flex-row gap-4 my-2 w-full">
           <button onClick={() => setOpenRequestForm(true)} className="bg-primary cursor-pointer text-white text-xs font-medium rounded-lg px-6 py-2 flex  items-center w-full justify-center sm:w-fit">
             Request a Quote
           </button>
