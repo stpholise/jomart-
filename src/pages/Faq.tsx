@@ -1,8 +1,17 @@
 import FaqCard from "../components/cards/FaqCard";
+import ReadyToStart from "../components/cards/ReadyToStart";
 const Faq = () => {
   return (
     <div className="">
-      <div className=" bg-gray-100 py-5">
+      <div className="container mx-auto my-12">
+        <h2 className="font-bold text-primary text-3xl text-center mb-4 ">
+          Frequently Asked Questions
+        </h2>
+        <p className="font-medium text-center">
+          Find answers to common questions about our services and more.
+        </p>
+      </div>
+      <div className="  py-5">
         <div className="container mx-auto px-4 flex flex-col gap-4 ">
           <FaqCard items={installationQAndA} />
           <FaqCard items={maintenanceQAndA} />
@@ -10,79 +19,79 @@ const Faq = () => {
           <FaqCard items={questionsAndAnswers} />
         </div>
       </div>
+      <ReadyToStart />
     </div>
   );
 };
-
 const installationQAndA: Record<string, string>[] = [
   {
-    ques: "What services does Abundant Engineering provide?",
-    ans: "Abundant Engineering offers a full range of elevator and escalator solutions, including installation, preventive maintenance, emergency repairs, spare parts supply, technical consultancy, and modernisation of existing systems.",
+    ques: "What services does Jomart Engineering provide?",
+    ans: "Jomart Engineering delivers end-to-end building construction solutions, covering residential and commercial projects, civil and structural works, renovations, finishing, and professional engineering consultancy—all handled with precision and care.",
   },
   {
-    ques: "Do you install new elevators and escalators?",
-    ans: "Yes. We handle complete installation projects for residential buildings, commercial properties, industrial facilities, shopping malls, and more. Our team manages everything from design and planning to testing and commissioning.",
+    ques: "Do you handle complete building construction projects?",
+    ans: "Yes. From concept to completion, we manage every stage of your project—planning, coordination, construction, quality control, and final delivery—so you can build with confidence.",
   },
   {
-    ques: "What maintenance services do you offer?",
-    ans: "We provide scheduled preventive maintenance, corrective repairs, safety inspections, lubrication, alignment checks, and performance optimisation to keep your elevator or escalator running smoothly and safely.",
+    ques: "What types of buildings do you construct?",
+    ans: "We construct high-quality residential homes, apartment buildings, office complexes, commercial facilities, warehouses, and mixed-use developments tailored to client needs.",
   },
   {
-    ques: "How often should an elevator or escalator be serviced?",
-    ans: "Typically, elevators and escalators should be serviced every 1–3 months, depending on usage, building type, and regulatory requirements. We can help you determine the ideal maintenance frequency for your equipment.",
+    ques: "Do you assist with project planning and approvals?",
+    ans: "Absolutely. We support clients with project planning, budgeting, scheduling, and regulatory compliance, ensuring a smooth and stress-free construction process.",
   },
 ];
 
 const maintenanceQAndA: Record<string, string>[] = [
   {
-    ques: "Do you provide emergency repair services?",
-    ans: "Yes. Abundant Engineering offers rapid-response repair services to minimise downtime and ensure user safety whenever unexpected breakdowns occur.",
+    ques: "Do you offer renovation and remodeling services?",
+    ans: "Yes. We revitalise existing buildings through expert renovations, remodeling, and refurbishments that enhance functionality, aesthetics, and long-term value.",
   },
   {
-    ques: "Can you supply spare parts for different elevator brands?",
-    ans: "Absolutely. We stock and supply genuine and high-quality replacement parts for most local and international elevator and escalator brands. If a part is not immediately available, we help source it quickly from our trusted partners.",
+    ques: "Can you handle structural repairs and maintenance?",
+    ans: "Certainly. Our team delivers reliable structural repairs, concrete works, and ongoing building maintenance to keep properties safe, durable, and compliant.",
   },
   {
-    ques: "What is elevator modernisation, and why is it necessary?",
-    ans: "Modernisation is the process of upgrading outdated elevator systems—components like controllers, motors, doors, or interiors—to improve safety, reliability, energy efficiency, and aesthetics. It is essential for older installations that no longer meet current standards or performance expectations.",
+    ques: "Do you provide electrical and plumbing services?",
+    ans: "Yes. Our Mechanical, Electrical, and Plumbing (MEP) services cover professional installations, upgrades, and maintenance for both new and existing buildings.",
   },
   {
-    ques: "Do you offer consultation services for new building projects?",
-    ans: "Yes. Our consultancy team provides expert guidance on elevator design, traffic analysis, load requirements, brand recommendations, project planning, and compliance with local building codes.",
+    ques: "Do you offer engineering consultancy services?",
+    ans: "Yes. We provide expert engineering consultancy, offering practical guidance, technical insights, and quality assurance to help clients make informed decisions.",
   },
 ];
 
 const pricingQAndA: Record<string, string>[] = [
   {
-    ques: "How long does a new elevator installation take?",
-    ans: "Depending on the building type and equipment model, installation typically takes 4–12 weeks, including preparation, installation, testing, and certification.",
+    ques: "How long does a typical construction project take?",
+    ans: "Project timelines vary based on size and complexity, but we provide clear schedules upfront and are committed to delivering every project on time and within scope.",
   },
   {
-    ques: "What types of elevators do you install?",
-    ans: "We install passenger elevators, freight elevators, machine-room-less (MRL) elevators, hydraulic elevators, panoramic lifts, hospital lifts, and custom-built solutions for special applications.",
+    ques: "Do you provide cost estimates before starting a project?",
+    ans: "Yes. We deliver transparent, detailed cost estimates to help clients plan effectively and avoid unexpected expenses.",
   },
   {
-    ques: "What types of escalators do you work with?",
-    ans: "We install, service, and modernise commercial escalators, moving walkways (travelators), and high-capacity escalators for malls, airports, offices, and public spaces.",
+    ques: "Do you handle material procurement?",
+    ans: "Yes. We source and procure high-quality construction materials from trusted suppliers, ensuring durability, value for money, and timely delivery.",
   },
   {
-    ques: "Are your engineers certified?",
-    ans: "Yes. Our technicians and engineers are trained, certified, and experienced in working with multiple elevator and escalator brands. We follow strict safety and compliance standards.",
+    ques: "Are your engineers and site workers qualified?",
+    ans: "Absolutely. Our skilled engineers and site teams are experienced professionals who uphold strict safety standards and industry best practices.",
   },
 ];
 
 const questionsAndAnswers: Record<string, string>[] = [
   {
-    ques: "Can you upgrade only specific parts instead of the whole system?",
-    ans: "Definitely. We offer selective modernisation such as upgrading only the controller, door operator, cabin interior, drive system, or safety components—based on your budget and needs.",
+    ques: "Can I customize my building design?",
+    ans: "Yes. We collaborate closely with clients and design partners to customise layouts, finishes, and specifications that reflect your vision and lifestyle.",
   },
   {
-    ques: "How do I request a quotation?",
-    ans: "You can request a quote via our website’s contact form, email, or by calling our support team. We’ll schedule a site visit or consultation to provide an accurate and tailored estimate.",
+    ques: "How do I request a quotation from Jomart Engineering?",
+    ans: "Simply contact us via our website, email, or phone. We’ll arrange a consultation or site visit to provide a clear, accurate, and tailored quotation.",
   },
   {
-    ques: "Why should I choose Abundant Engineering?",
-    ans: "We provide reliable, cost-effective, and high-quality elevator and escalator solutions backed by expert technicians, fast response times, genuine spare parts, and a customer-first service approach.",
+    ques: "Why should I choose Jomart Engineering?",
+    ans: "Jomart Engineering stands for quality, reliability, and excellence. With professional project management, skilled workmanship, and a customer-first approach, we turn building ideas into lasting realities.",
   },
 ];
 

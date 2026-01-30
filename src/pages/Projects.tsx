@@ -1,20 +1,14 @@
 import clsx from "clsx";
+import ReadyToStart from "../components/cards/ReadyToStart";
 const Projects = () => {
   return (
     <div className="">
-      {/* <div className="container overflow-hidden mx-auto">
-        <div className="animate-marquee flex gap-4   ">
-          <div className="whitespace-nowrap"> Lorem, ipsum dolor.</div>
-          <div className="whitespace-nowrap"> Lorem, ipsum dolor.</div>
-          <div className="whitespace-nowrap"> Lorem, ipsum dolor.</div>
-          <div className="whitespace-nowrap"> Lorem, ipsum dolor.</div>
-
-          <div className="whitespace-nowrap"> Lorem, ipsum dolor.</div>
-
-          <div className="whitespace-nowrap"> Lorem, ipsum dolor.</div>
-        </div>
-      </div> */}
-      projects
+      <div className="">
+        <h2 className="text-center font-semibold text-3xl my-4 text-primary">
+          {" "}
+          Our Projects{" "}
+        </h2>
+      </div>
       <div className="container mx-auto px-4 flex flex-col gap-3 sm:gap-6 my-8 ">
         {projects.map((item, index) => (
           <div
@@ -30,8 +24,15 @@ const Projects = () => {
               <h4 className="text-lg font-semibold sm:mt-2">{item.title}</h4>
               <p className="">{item.text}</p>
               <div className="mt-auto flex flex-col w-full gap-3  justify-between flex-start">
-                <p className="mt-auto  text-xs font-medium text-logo-blue ">form:may 2023 to march 2024</p>
-                <button className="mt-auto bg-primary  rounded-lg max-w-70   w-full text-sm font-medium text-white py-1 px-4">
+                <div className=" flex gap-4  w-full px-2 overflow-hidden  ">
+                  <div className="whitespace-nowrap ">
+                    {" "}
+                    <p className="mt-auto  text-xs font-medium text-logo-blue ">
+                      form:may 2023 to march 2024
+                    </p>
+                  </div>
+                </div>{" "}
+                <button className="mt-auto cursor-pointer bg-primary  rounded-lg max-w-70   w-full text-sm font-medium text-white py-1 px-4">
                   {" "}
                   See More{" "}
                 </button>
@@ -40,6 +41,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
+      <ReadyToStart />
     </div>
   );
 };

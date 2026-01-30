@@ -57,8 +57,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-3 px-4 py-4">
-        <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
+      <div className="flex flex-col gap-3 px-4 py-8">
+        <h3 className="text-lg text-logo-blue text-center my-4 font-medium  uppercase ">
           services
         </h3>
         <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -66,7 +66,7 @@ const Home = () => {
             <div
               key={index}
               className={clsx(
-                ` border border-gray-200 px-3 py-3 bg-white shadow cursor-pointer overflow-hidden rounded-lg flex flex-col gap-3  h-fit bg-cover bg-center`,
+                `h-full border border-gray-200 px-3 py-3 bg-white shadow cursor-pointer overflow-hidden rounded-lg flex flex-col gap-3   bg-cover bg-center`,
               )}
             >
               {/* <div className="w-full  h-40 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
@@ -77,7 +77,14 @@ const Home = () => {
                 />
               </div> */}
               <p className="text-xl text-black font-medium ">{item.title}</p>
-              <p className="text-sm">{item.message}</p>
+              <div className="text-sm px-4">
+                {item.more.map((text, index) => (
+                  <div className="text-xs font-medium mb-1 flex gap-3 items-center" key={index}>
+                   <div className="rounded-full w-2 h-2 bg-logo-blue"></div>
+                    <p className="">{text}</p>
+                  </div>
+                ))}
+              </div>
               {/* <button className="bg-primary text-white font-medium text-sm py-2 px-4 rounded-lg text-center ">
                 {" "}
                 Request Now
@@ -86,8 +93,8 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-3 px-4 py-4">
-        <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
+      <div className="flex flex-col gap-3 px-4 py-8">
+        <h3 className="text-lg text-center my-4 text-logo-blue font-medium  uppercase ">
           Projects
         </h3>
         <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -107,23 +114,23 @@ const Home = () => {
               </div>
               {/* <p className="text-xl text-black font-medium ">{item.title}</p>
               <p className="text-sm">{item.message}</p> */}
-              <button className="bg-primary text-white font-medium text-sm py-2 px-4 rounded-lg text-center ">
+              <button className="bg-primary cursor-pointer text-white font-medium text-sm py-2 px-4 rounded-lg text-center ">
                 {" "}
                 See Project
               </button>
             </div>
           ))}
         </div>
-        <button className=" bg-logo-blue w-fit mx-auto py-2 px-4 font-medium text-logo-light sm:text-primary hover:text-logo-light rounded-lg my-2  ">
+        <button className=" bg-logo-blue cursor-pointer w-fit mx-auto py-2 px-4 font-medium text-logo-light sm:text-primary hover:text-logo-light rounded-lg my-2  ">
           {" "}
           See All Projects
         </button>
       </div>
-      <div className="container mx-auto">
-        <h3 className="text-lg text-center mb-3 font-medium text-logo-blue uppercase ">
+      <div className="container mx-auto py-8">
+        <h3 className="text-lg text-center my-4 font-medium text-logo-blue uppercase ">
           Team
         </h3>
-        <div className="py-4 px-4 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="py-4 px-4 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
           {team.map((item, index) => (
             <div className="flex flex-col" key={index}>
               <div className=" ">
@@ -159,65 +166,89 @@ const Home = () => {
 const feedbacksItems = [
   {
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
-    name: "dummy name",
+      "“Jomart Engineering brought our dream home to life! From planning to finish, their team was professional, communicative, and detail-oriented. The quality of workmanship exceeded our expectations. We couldn’t be happier!”",
+    name: "Mrs. Aisha Bello, ",
+    location: "Port Harcourt",
   },
   {
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
-    name: "dummy name",
+      "“Working with Jomart on our office building project was a seamless experience. They managed the schedule perfectly and delivered on time without compromising quality. Their expertise made a big difference.”",
+    name: "Mr. Chinedu Okeke, CEO, Okeke Enterprises",
+    location: "Warri, Delta State",
   },
   {
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
-    name: "dummy name",
+      "“Jomart Engineering handled our renovation with impressive skill and care. They respected our budget and communicated clearly throughout. The final result transformed our space beautifully.”",
+    name: "Mrs. Funke Adeyemi",
+    location: "Lagos",
   },
   {
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
-    name: "dummy name",
+     '“We are extremely satisfied with Jomart’s workmanship. Their site team was professional and respectful, and the project was completed ahead of schedule. Highly recommended!”',
+    name: "Mr. Michael Udo, Udo Construction Supplies",location:  "Delta State"
   },
   {
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
-    name: "dummy name",
+   ' “Jomart Engineering provided excellent project management and attention to detail on our commercial project. Their engineers and workers were reliable and skilled. A trustworthy construction partner!”, name: "dummy name"',
+    name: "Mrs. Grace Nwosu, Owner of GreenLeaf Supermarket", location: "Delta State"
   },
-  {
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
-    name: "dummy name",
-  },
-  {
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
-    name: "dummy name",
-  },
+ 
 ];
 
-const services = [
+const services: { title: string; image: string; more: string[] }[] = [
   {
-    title: "Architectural Design",
+    title: "General Building Construction",
     image: "achitectural_design.jpeg",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    more: [
+      "Residential buildings (houses, apartments)",
+      "Commercial buildings (offices, shops, malls)",
+      "Industrial structures (warehouses, factories)",
+    ],
   },
   {
-    title: "Architectural Design",
+    title: "Project Planning & Management",
     image: "achitectural_design.jpeg",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    more: [
+      "Scheduling and timeline planning",
+      "Resource and budget management",
+      "Coordination of contractors and subcontractors",
+    ],
   },
   {
-    title: "Architectural Design",
+    title: "Design & Architectural Services",
     image: "achitectural_design.jpeg",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    more: [
+      "Concept and architectural design",
+      "Structural design",
+      "Interior layout planning",
+    ],
   },
   {
-    title: "Architectural Design",
+    title: "Civil & Structural Works",
     image: "achitectural_design.jpeg",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tenetur nam dolor eos deserunt voluptas quidem ab autem nostrum quae?",
+    more: [
+      "Earthworks, foundations, slab work",
+      "Column, beam, roof construction",
+      "Reinforcement and concrete works",
+    ],
+  },
+  {
+    title: "Renovation & Remodeling",
+    image: "achitectural_design.jpeg",
+    more: [
+      "Upgrading existing buildings",
+      "Structural modifications",
+      "Modernizing interiors",
+    ],
+  },
+  {
+    title: "Electrical & Mechanical Installations",
+    image: "achitectural_design.jpeg",
+    more: [
+      "Wiring, power distribution",
+      "HVAC (heating, ventilation, air conditioning)",
+      "Plumbing and drainage systems",
+    ],
   },
 ];
 
