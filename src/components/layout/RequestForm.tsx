@@ -50,7 +50,7 @@ const RequestForm = ({
   const submitRequest = async (values: RequestType) => {
     setLoading(true);
     try {
-      await fetch("https://formsubmit.co/stephenolise4@gmail.com", {
+      await fetch("https://formsubmit.co/jomartengineeringservices@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -245,7 +245,7 @@ const RequestForm = ({
                     className="text-red-500"
                   />
                 </div>
-                <button className="mt-auto  block py-2 w-full bg-primary h-8 rounded-lg text-xs font-semibold text-white">
+                <button className="mt-auto cursor-pointer block py-2 w-full bg-primary h-8 rounded-lg text-xs font-semibold text-white">
                   Submit Request
                 </button>
               </Form>

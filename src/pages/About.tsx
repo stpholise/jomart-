@@ -1,4 +1,5 @@
 import CarouselComponent from "../components/utils/CarouselComponent";
+import ReadyToStart from "../components/cards/ReadyToStart";
 
 const About = () => {
   return (
@@ -34,16 +35,18 @@ const About = () => {
                 {" "}
                 Our Journy
               </h3>
-              {journy.map((item, index) => (
-                <div className="flex items-center gap-3" key={index}>
-                  <p className="text-white bg-logo-blue font-medium px-2 py-1 text-[10px] w-8 flex items-center justify-center rounded-md">
-                    {" "}
-                    {item.year}
-                  </p>
-                  <div className="round bg-logo-blue rounded-full h-3 w-3 flex items-center justify-center"></div>
-                  <p className="">{item.achievement}</p>
-                </div>
-              ))}
+              <div className="flex flex-col gap-3">
+                {journey.map((item, index) => (
+                  <div className="flex items-center gap-3 sm:flex-row flex-col" key={index}>
+                    <p className="text-white bg-logo-blue font-medium px-2 py-1 text-[10px] w-8 flex items-center justify-center rounded-md">
+                      {" "}
+                      {item.year}
+                    </p>
+                    <div className="round bg-logo-blue rounded-full h-3 hidden  sm:w-3 sm:flex items-center justify-center"></div>
+                    <p className="">{item.achievement}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -133,7 +136,7 @@ const About = () => {
           ))}
         </div>
       </div>
-      
+      <ReadyToStart />
     </div>
   );
 };
@@ -176,27 +179,78 @@ const feedbacksItems = [
   },
 ];
 
-const journy = [
+const journey: {
+  year: number | string;
+  achievement: string;
+  milestone?: string;
+  award?: string;
+  certification?: string;
+  expansion?: string;
+  innovation?: string;
+  recognition?: string;
+  vision?: string;
+}[] = [
   {
-    year: 2010,
-    achievement: "company founded with a mission to innovate",
+    year: 2012,
+    achievement:
+      "Jomart Engineering Services Ltd founded with 5 staff members, specializing in residential construction projects",
+  },
+  {
+    year: 2014,
+    achievement:
+      "Successfully completed first major commercial project - 5-story office complex in Lagos",
+    milestone: "Expanded team to 25 professionals",
+  },
+  {
+    year: 2016,
+    achievement:
+      "Achieved ISO 9001:2015 Quality Management System certification",
+    milestone: "Ventured into industrial construction sector",
+  },
+  {
+    year: 2018,
+    achievement:
+      "Completed landmark project: 15,000 sqm manufacturing facility for leading FMCG company",
+    award: "Construction Excellence Award - Nigerian Building Association",
+  },
+  {
+    year: 2020,
+    achievement:
+      "Launched sustainable engineering division focusing on green building technologies",
+    milestone: "Opened regional office in Abuja",
   },
   {
     year: 2022,
-    achievement: "company founded with a mission to innovate",
+    achievement:
+      "Secured largest contract to date: $15M infrastructure development project",
+    certification: "Became COREN-certified engineering firm",
   },
   {
     year: 2023,
-    achievement: "company founded with a mission to innovate",
+    achievement:
+      "Implemented advanced BIM (Building Information Modeling) technology across all projects",
+    expansion:
+      "International partnership established with European engineering consortium",
   },
   {
     year: 2024,
-    achievement: "company founded with a mission to innovate",
+    achievement:
+      "Achieved zero-accident milestone for 500 consecutive working days",
+    innovation:
+      "Pioneered use of recycled materials in 80% of construction projects",
   },
   {
     year: 2025,
-    achievement: "company founded with a mission to innovate",
+    achievement:
+      "Launched Jomart Engineering Academy for workforce development and industry training",
+    recognition:
+      "Named among 'Top 50 Fastest Growing Engineering Firms in Nigeria' by Business Day",
   },
+  // {
+  //   year: "2026 (Projected)",
+  //   achievement: "Expansion into renewable energy infrastructure projects across West Africa",
+  //   vision: "Targeting 40% year-over-year growth in sustainable construction projects"
+  // }
 ];
 
 const team = [

@@ -88,7 +88,7 @@ const Footer = () => {
             </div>
             <button
               onClick={() => setOpenRequestForm(true)}
-              className=" text-white text-sm w-full  font-medium text-center rounded-lg bg-primary  py-1.5 px-4 flex items-center justify-center min-w-60"
+              className="cursor-pointer text-white text-sm w-full  font-medium text-center rounded-lg bg-primary  py-1.5 px-4 flex items-center justify-center min-w-60"
             >
               {" "}
               Message

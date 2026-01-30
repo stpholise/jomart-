@@ -25,7 +25,7 @@ interface Items {
 
 const Feedbacks = ({ items }: { items: Items[] }) => {
   return (
-    <div className="container mx-auto mb-8">
+    <div className="container mx-auto mb-8 ">
       {items && (
         <Carousel
           swipeable
@@ -38,15 +38,15 @@ const Feedbacks = ({ items }: { items: Items[] }) => {
           transitionDuration={500}
         >
           {items.map((item, index) => (
-            <div className="px-2 sm-px-3" key={index}>
-              <div className=" bg-gray-200 py-3 px-3 rounded-lg flex-col flex gap-y-6 ">
+            <div className="px-2 sm-px-3 h-full " key={index}>
+              <div className=" bg-gray-200 py-3 px-3 h-full rounded-lg flex-col flex gap-y-6 ">
                 <p className="text-gray-600  font-medium  text-sm">
                   {item.message}
                 </p>
                 <h4 className="text-base font-semibold ">{item.name}</h4>
               </div>
             </div>
-          ))}
+          ))} 
         </Carousel>
       )}
     </div>

@@ -24,7 +24,7 @@ const FaqCard = ({ items }: FaqCardProps) => {
           <button
             onClick={() => openClose(index)}
             className="flex text-xs ease-in-out cursor-pointer hover:border-primary
-                text-[#121212] hover:text-primary dark:text-[#afafaf] font-medium py-3 items-center w-full justify-between gap-7 px-1 border-b last:border-b-0    border-gray-400"
+                text-gray-100 hover:text-primary dark:text-gray-100 font-medium py-3 items-center w-full justify-between gap-7 px-1 border-b last:border-b-0    border-gray-400"
           >
             {item.ques}
             <img
@@ -40,7 +40,7 @@ const FaqCard = ({ items }: FaqCardProps) => {
           </button>
           <p
             className={clsx(
-              "  px-8 text-xs  text-[#7f7f8f]  dark:text-white transition-all  duration-300 ease-in-out",
+              "  px-8 text-xs  text-gray-100  dark:text-white transition-all  duration-300 ease-in-out",
               selected.includes(index)
                 ? " py-8 h-fit max-h-40 opacity-100"
                 : "  h-0 max-h-0 opacity-0"
