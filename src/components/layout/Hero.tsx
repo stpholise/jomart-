@@ -42,7 +42,7 @@ const Hero = () => {
             className="hero  relative  w-full h-100  bg-cover bg-center   "
           >
             <div className=" w-full h-full ">
-                <img src={item.image} alt="bg"  fetchPriority="high"  className="w-full h-full object-cover" />
+                <img  src={item.image} alt="hero backgoud" loading="eager" fetchPriority="high"  className="w-full h-full object-cover" />
             </div>
             <div className="  absolute inset-0 bg-black/40 flex flex-col items-center justify-center px-4 h-full sm:px-8 py-12 sm:py-8 gap-8 md:gap-12 ">
               <h2 className=" max-w-150 text-3xl md:text-5xl text-white text-center font-medium ">
