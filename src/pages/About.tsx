@@ -1,5 +1,6 @@
 import CarouselComponent from "../components/utils/CarouselComponent";
 import ReadyToStart from "../components/cards/ReadyToStart";
+import OurTeams from "../components/OurTeams";
 
 const About = () => {
   return (
@@ -33,11 +34,14 @@ const About = () => {
             <div className="flex flex-col gap-2.5 container mx-auto my-8 items-center">
               <h3 className="text-xl text-logo-blue font-medium my-2">
                 {" "}
-                Our Journy
+                Our Journey
               </h3>
               <div className="flex flex-col gap-3">
                 {journey.map((item, index) => (
-                  <div className="flex items-center gap-3 sm:flex-row flex-col" key={index}>
+                  <div
+                    className="flex items-center gap-3 sm:flex-row flex-col"
+                    key={index}
+                  >
                     <p className="text-white bg-logo-blue font-medium px-2 py-1 text-[10px] w-8 flex items-center justify-center rounded-md">
                       {" "}
                       {item.year}
@@ -87,55 +91,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* <div className="container mx-auto px-4">Be a part of our team</div> */}
-
-      {/* <div className="bg-logo-blue  mx-auto rounded-3xl my-8 py-8">
-        <div className="container mx-auto  my-4">
-          <h3>Our Awards</h3>
-          <div className="">
-            <div className="">
-              <img src="/images/ai_passport_1.jpeg" alt="" className="w-12" />
-            </div>
-          </div>
-        </div>
-        <div className="container mx-auto">
-          <h3 className=" text-center text-2xl font-medium  text-logo-blue">
-            {" "}
-            Our values
-          </h3>
-          <div className="  text-gray-200">
-            <CarouselComponent items={feedbacksItems} />
-          </div>
-        </div>
-      </div> */}
-
-      <div className="container mx-auto my-10">
-        {/* <h3 className="text-lg text-center mb-3 font-medium text-logo-blue uppercase ">
-          Team
-        </h3> */}
-        <h4 className="text-center text-lg font-medium  text-logo-blue my-4">
-          Meet Our Leaders
-        </h4>
-        <div className="py-4 px-4 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4">
-          {team.map((item, index) => (
-            <div className="flex flex-col" key={index}>
-              <div className=" ">
-                <img
-                  src={`${item.image}`}
-                  alt="image"
-                  className="w-full object-cover md:object-top  first:object-cover h-80 xs:h-40 md:h-90 overflow-hidden object-center"
-                />
-              </div>
-              <h4 className="text-base capitalize font-semibold text-center">
-                {item.name}
-              </h4>
-              <p className="text-gray-600 font-medium text-center">
-                {item.position}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <OurTeams />
       <ReadyToStart />
     </div>
   );
@@ -245,29 +201,6 @@ const journey: {
       "Launched Jomart Engineering Academy for workforce development and industry training",
     recognition:
       "Named among 'Top 50 Fastest Growing Engineering Firms in Nigeria' by Business Day",
-  },
-  // {
-  //   year: "2026 (Projected)",
-  //   achievement: "Expansion into renewable energy infrastructure projects across West Africa",
-  //   vision: "Targeting 40% year-over-year growth in sustainable construction projects"
-  // }
-];
-
-const team = [
-  {
-    image: "/images/engr_joe.png",
-    name: "Engr. Nwanze Tobechukwu Joseph",
-    position: "Chairman/Founder",
-  },
-  {
-    image: "/images/ObuezieOnyekaJeremiah.jpeg",
-    name: "OBUEZIE ONYEKA JEREMIAH",
-    position: "Project Manager",
-  },
-  {
-    image: "/images/MrsUgbomahEgoamaka.jpeg",
-    name: "Mrs Ugbomah Egoamaka",
-    position: "Chief Operation Manager",
   },
 ];
 

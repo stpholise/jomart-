@@ -1,20 +1,13 @@
 import clsx from "clsx";
 import Feedbacks from "../components/utils/Feedbacks";
+import Hero from "../components/layout/Hero";
+import OurTems from "../components/OurTeams";
+import { Link } from "react-router";
 
 const Home = () => {
   return (
     <div className="">
-      <div className="hero bg-[url('/images/hero1.jpeg')] relative  w-full h-100  bg-cover bg-center   ">
-        <div className=" absolute inset-0 bg-black/30 flex flex-col items-center justify-center h-full px-8 py-4 gap-12">
-          <h2 className=" text-3xl md:text-4xl text-white text-center font-medium ">
-            Boost you company’s productivity
-          </h2>
-          <p className="text-sm text-gray-200 text-center">
-            Jomart engineering services limited is a 21’st sentuar engieering
-            company founded in 2012y{" "}
-          </p>
-        </div>
-      </div>
+      <Hero />
       <div className="flex flex-col gap-3 pt-12 pb-8 px-4 container mx-auto">
         <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
         <div className="flex flex-col gap-3 md:flex-row">
@@ -32,7 +25,7 @@ const Home = () => {
             </p>
           </div>
           <div className="flex flex-col  w-full md:w-18/12 gap-4">
-            <div className="px-2 py-2 rounded-lg bg-logo-light">
+            <div className="px-4 py-4 rounded-lg bg-logo-light">
               <h5 className=" text-lg text-left font-medium mb-1 text-logo-blue">
                 Our Goals
               </h5>
@@ -42,7 +35,7 @@ const Home = () => {
                 delivery.
               </p>
             </div>
-            <div className="px-2 py-2 rounded-lg bg-logo-light">
+            <div className="px-4 py-4 rounded-lg bg-logo-light">
               <h5 className="text-lg font-medium text-left text-logo-blue mb-1">
                 {" "}
                 Our Mission
@@ -65,30 +58,24 @@ const Home = () => {
           {services.map((item, index) => (
             <div
               key={index}
+              data-aos="fade-up"
+              data-aos-duration="800"
               className={clsx(
                 `h-full border border-gray-200 px-3 py-3 bg-white shadow cursor-pointer overflow-hidden rounded-lg flex flex-col gap-3   bg-cover bg-center`,
               )}
             >
-              {/* <div className="w-full  h-40 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
-                <img
-                  src={`/images/${item.image}`}
-                  alt=""
-                  className="h-full object-cover w-full "
-                />
-              </div> */}
               <p className="text-xl text-black font-medium ">{item.title}</p>
               <div className="text-sm px-4">
                 {item.more.map((text, index) => (
-                  <div className="text-xs font-medium mb-1 flex gap-3 items-center" key={index}>
-                   <div className="rounded-full w-2 h-2 bg-logo-blue"></div>
+                  <div
+                    className="text-xs font-medium mb-1 flex gap-3 items-center"
+                    key={index}
+                  >
+                    <div className="rounded-full w-2 h-2 bg-logo-blue"></div>
                     <p className="">{text}</p>
                   </div>
                 ))}
               </div>
-              {/* <button className="bg-primary text-white font-medium text-sm py-2 px-4 rounded-lg text-center ">
-                {" "}
-                Request Now
-              </button> */}
             </div>
           ))}
         </div>
@@ -112,8 +99,6 @@ const Home = () => {
                   className="h-full object-cover w-full "
                 />
               </div>
-              {/* <p className="text-xl text-black font-medium ">{item.title}</p>
-              <p className="text-sm">{item.message}</p> */}
               <button className="bg-primary cursor-pointer text-white font-medium text-sm py-2 px-4 rounded-lg text-center ">
                 {" "}
                 See Project
@@ -121,37 +106,17 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <button className=" bg-logo-blue cursor-pointer w-fit mx-auto py-2 px-4 font-medium text-logo-light sm:text-primary hover:text-logo-light rounded-lg my-2  ">
+        <Link
+          to={"/projects"}
+          className=" bg-logo-blue cursor-pointer w-fit mx-auto py-2 px-4 font-medium text-white  hover:border-logo-light ease-in-out border shadow border-logo-blue rounded-lg my-2  "
+        >
           {" "}
           See All Projects
-        </button>
+        </Link>
       </div>
-      <div className="container mx-auto py-8">
-        <h3 className="text-lg text-center my-4 font-medium text-logo-blue uppercase ">
-          Team
-        </h3>
-        <div className="py-4 px-4 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
-          {team.map((item, index) => (
-            <div className="flex flex-col" key={index}>
-              <div className=" ">
-                <img
-                  src={`${item.image}`}
-                  alt="image"
-                  className="w-full object-cover md:object-top  first:object-cover h-80 xs:h-40 md:h-90 overflow-hidden object-center"
-                />
-              </div>
-              <h4 className="text-base capitalize font-semibold text-center">
-                {item.name}
-              </h4>
-              <p className="text-gray-600 font-medium text-center">
-                {item.position}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <OurTems />
       <div className="">
-        <h3 className="text-lg text-center mb-3 font-medium text-black uppercase ">
+        <h3 className="text-lg text-center mb-3 font-medium text-logo-blue uppercase ">
           Feedbacks
         </h3>
 
@@ -184,15 +149,16 @@ const feedbacksItems = [
   },
   {
     message:
-     '“We are extremely satisfied with Jomart’s workmanship. Their site team was professional and respectful, and the project was completed ahead of schedule. Highly recommended!”',
-    name: "Mr. Michael Udo, Udo Construction Supplies",location:  "Delta State"
+      "“We are extremely satisfied with Jomart’s workmanship. Their site team was professional and respectful, and the project was completed ahead of schedule. Highly recommended!”",
+    name: "Mr. Michael Udo, Udo Construction Supplies",
+    location: "Delta State",
   },
   {
     message:
-   ' “Jomart Engineering provided excellent project management and attention to detail on our commercial project. Their engineers and workers were reliable and skilled. A trustworthy construction partner!”, name: "dummy name"',
-    name: "Mrs. Grace Nwosu, Owner of GreenLeaf Supermarket", location: "Delta State"
+      ' “Jomart Engineering provided excellent project management and attention to detail on our commercial project. Their engineers and workers were reliable and skilled. A trustworthy construction partner!”, name: "dummy name"',
+    name: "Mrs. Grace Nwosu, Owner of GreenLeaf Supermarket",
+    location: "Delta State",
   },
- 
 ];
 
 const services: { title: string; image: string; more: string[] }[] = [
@@ -249,24 +215,6 @@ const services: { title: string; image: string; more: string[] }[] = [
       "HVAC (heating, ventilation, air conditioning)",
       "Plumbing and drainage systems",
     ],
-  },
-];
-
-const team = [
-  {
-    image: "/images/engr_joe.png",
-    name: "Engr. Nwanze Tobechukwu Joseph",
-    position: "Chairman/Founder",
-  },
-  {
-    image: "/images/ObuezieOnyekaJeremiah.jpeg",
-    name: "OBUEZIE ONYEKA JEREMIAH",
-    position: "Project Manager",
-  },
-  {
-    image: "/images/MrsUgbomahEgoamaka.jpeg",
-    name: "Mrs Ugbomah Egoamaka",
-    position: "Chief Operation Manager",
   },
 ];
 

@@ -51,7 +51,7 @@ const Contact = () => {
           Get in touch with our team for any questions or project inquiries
         </p>
       </div>
-      <div className="flex flex-col md:flex-row container mx-auto py-4 px-4 gap-6">
+      <div className="flex flex-col md:flex-row container mx-auto py-8 px-4 gap-6">
         <div className="container mx-auto  flex flex-col gap-4     max-w-150    ">
           <div className="mb-4 max-w-120 md:mx-auto md:w-120 shadow-2xl">
             <Formik initialValues={initialValues} onSubmit={submitMessage}>
