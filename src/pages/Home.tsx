@@ -87,6 +87,9 @@ const Home = () => {
         <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {services.map((item, index) => (
             <div
+              data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
+              data-aos-duration="600"
+              data-aos-once="true"
               key={index}
               className={clsx(
                 ` border border-gray-200 px-3 py-3 bg-white shadow cursor-pointer overflow-hidden rounded-lg flex flex-col gap-3  h-fit bg-cover bg-center`,

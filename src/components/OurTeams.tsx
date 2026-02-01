@@ -7,7 +7,7 @@ const OurTeams = () => {
       </h4>
       <div className="py-4 px-4 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4">
         {team.map((item, index) => (
-          <div className="flex flex-col" data-aos="flip-right" data-aos-duration="600" key={index}>
+          <div className="flex flex-col gap-2 mb-3 " data-aos="flip-right" data-aos-duration="600" key={index}>
             <div className=" ">
               <img
                 src={`${item.image}`}
