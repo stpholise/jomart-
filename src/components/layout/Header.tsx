@@ -10,16 +10,15 @@ const Header = () => {
   return (
     <div className="w-full h-14 border-gray-400 border-b flex items-center justify-between gap-12 px-6 py-4 ">
       <Link to={"/"} className="logo">
-        <img src="/jomart.png" alt="logo" className="w-30 h-10" />
+        <img src="/jomart.png" alt="logo" fetchPriority="high" className="w-30 h-10" />
       </Link>
 
       <div className="flex">
-        <nav></nav>
         <button
           onClick={() => setOpenMenu((prev) => !prev)}
           className="flex sm:hidden"
         >
-          <img src="/icons/menu.svg" alt="menu btn" className="w-8 h-8" />
+          <img src="/icons/menu.svg" alt="menu btn" className="w-8 h-8" fetchPriority="high" />
         </button>
       </div>
       <div
