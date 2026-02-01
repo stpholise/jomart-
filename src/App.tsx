@@ -8,7 +8,11 @@ import Projects from "./pages/Projects";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function App() {
+   AOS.init()
   return (
     <>
       <BrowserRouter>
