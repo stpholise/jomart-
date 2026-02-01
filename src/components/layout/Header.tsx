@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="w-full h-14 border-gray-400 border-b flex items-center justify-between gap-12 px-6 py-4 ">
       <Link to={"/"} className="logo">
-        <img src="/jomart.png" alt="logo" className="w-30 h-10" />
+        <img src="/jomart.png" alt="logo" fetchPriority="high" className="w-30 h-10" />
       </Link>
 
       <div className="flex">
@@ -19,7 +19,7 @@ const Header = () => {
           onClick={() => setOpenMenu((prev) => !prev)}
           className="flex sm:hidden"
         >
-          <img src="/icons/menu.svg" alt="menu btn" className="w-8 h-8" />
+          <img src="/icons/menu.svg" fetchPriority="high"  alt="menu btn" className="w-8 h-8" />
         </button>
       </div>
       <div
@@ -32,7 +32,7 @@ const Header = () => {
           onClick={() => setOpenMenu(false)}
           className="flex sm:hidden absolute top-4 right-4 bg-gray-400 p-2 rounded-full h-8 w-8  items-center justify-center"
         >
-          <img src="/icons/close.svg" alt="" className="w-4 h-4" />
+          <img src="/icons/close.svg" alt="close" className="w-4 h-4" />
         </button>
         {navLinks.map((item, index) => (
           <Link
