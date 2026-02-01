@@ -18,7 +18,7 @@ const Footer = () => {
                 <div className="">
                   <img
                     src="/icons/location.svg"
-                    alt=""
+                    alt="location icon"
                     className="w-6 h-6/12"
                   />
                 </div>
@@ -30,7 +30,7 @@ const Footer = () => {
                 <div className="">
                   <img
                     src="/icons/location.svg"
-                    alt=""
+                    alt="location icon"
                     className="w-6 h-6/12"
                   />
                 </div>
@@ -38,19 +38,19 @@ const Footer = () => {
               </div>
               <div className="flex gap-2 items-center justify-start">
                 <div className="">
-                  <img src="/icons/phone.svg" alt="" className="w-6 h-6" />
+                  <img src="/icons/phone.svg" alt="phone icon" className="w-6 h-6" />
                 </div>
                 <p> 07034601021</p>
               </div>
               <div className="flex gap-2 items-center justify-start">
                 <div className="">
-                  <img src="/icons/phone.svg" alt="" className="w-6 h-6" />
+                  <img src="/icons/phone.svg" alt="phone icon" className="w-6 h-6" />
                 </div>
                 <p> 08131044314</p>
               </div>
               <div className="flex gap-2 items-center justify-start">
                 <div className="">
-                  <img src="/icons/phone.svg" alt="" className="w-6 h-6" />
+                  <img src="/icons/phone.svg" alt="phone" className="w-6 h-6" />
                 </div>
                 <p> +234 905 435 0404</p>
               </div>
@@ -65,14 +65,14 @@ const Footer = () => {
                 target="_blank"
                 className=" size-5.5 rounded-full  flex items-end justify-center bg-[#121212] border border-[#eeeeee] hover:border-primary p-0.5"
               >
-                <img src="/icons/facebook.svg" alt="" className="w-3 h-3 " />
+                <img src="/icons/facebook.svg" alt="facebook" className="w-3 h-3 " />
               </Link>
               <Link
                 to={"https://x.com"}
                 target="_blank"
                 className=" size-5.5 rounded-full  flex items-center justify-center border bg-[#121212] border-[#eeeeee] hover:border-primary p-0.5"
               >
-                <img src="/icons/instagram.svg" alt="" className="w-3 h-3 " />
+                <img src="/icons/instagram.svg" alt="instagram" className="w-3 h-3 " />
               </Link>
               <Link
                 to={"https://www.linkedin.com"}
@@ -81,7 +81,7 @@ const Footer = () => {
               >
                 <img
                   src="/icons/linkedin.svg"
-                  alt=""
+                  alt="linkedin icon"
                   className="w-3 h-3 object-contain"
                 />
               </Link>

@@ -21,7 +21,7 @@ const Projects = () => {
             )}
           >
             <div className="w-99 h-60 overflow-hidden sm:h-full  ">
-              <img src={item.image} alt="" />
+              <img src={item.image} alt="project-image" loading="lazy" />
             </div>
             <div className="flex flex-col px-4 py-6 gap-4 sm:gap-4 ">
               <h4 className="text-lg font-semibold sm:mt-2">{item.title}</h4>

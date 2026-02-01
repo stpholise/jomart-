@@ -46,7 +46,9 @@ const Contact = () => {
   return (
     <div>
       <div className="container mx-auto my-12">
-        <h2 className="font-bold text-primary text-3xl text-center mb-4 ">Contact</h2>
+        <h2 className="font-bold text-primary text-3xl text-center mb-4 ">
+          Contact
+        </h2>
         <p className="font-medium text-center">
           Get in touch with our team for any questions or project inquiries
         </p>
@@ -137,13 +139,13 @@ const Contact = () => {
         </div>
 
         <div className="w-full sm:w-99 px-4 flex flex-col gap-3 ">
-          <div className="border text-white tex-sm border-logo-light bg-logo-blue px-4 py-4 rounded-md shadow flex-col flex gap-2">
+          <div className=" text-white tex-sm  bg-logo-blue px-4 py-4 rounded-md shadow flex-col flex gap-2">
             <div className="text-lg font-semibold text-logo-light mb-3 flex gap-2">
-              <img src="/icons/phone.svg" alt="" className="w-4" />
+              <img src="/icons/phone.svg" alt="phone" className="w-4" />
               Phone
             </div>
             <div className="flex gap-4 items-center">
-              <img src="/icons/phone.svg" alt="" className="w-4" />
+              <img src="/icons/phone.svg" alt="phone" className="w-4" />
               <div className="">
                 <a href="tel:+2347034601021" className="font-medium">
                   {" "}
@@ -153,7 +155,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-4 items-center">
-              <img src="/icons/phone.svg" alt="" className="w-4" />
+              <img src="/icons/phone.svg" alt="phone" className="w-4" />
               <div className="">
                 <a href="tel:+2348131044314" className="font-medium">
                   {" "}
@@ -163,7 +165,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="flex gap-4 items-center">
-              <img src="/icons/phone.svg" alt="" className="w-4" />
+              <img src="/icons/phone.svg" alt="phone" className="w-4" />
               <div className="">
                 <a href="tel:+2349054350404" className="font-medium">
                   {" "}
@@ -173,9 +175,9 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="border text-white tex-sm border-logo-light bg-logo-light px-4 py-4 rounded-md shadow flex-col flex gap-2">
-            <div className="text-lg font-semibold text-logo-blue mb-3 flex gap-2">
-              <img src="/icons/phone.svg" alt="" className="w-4" />
+          <div className=" text-white tex-sm  bg-logo-blue px-4 py-4 rounded-md shadow flex-col flex gap-2">
+            <div className="text-lg font-semibold text-logo-light mb-3 flex gap-2">
+              <img src="/icons/phone.svg" alt="phone" className="w-4" />
               Business Hours
             </div>
             <div className=" flex justify-between text-sm font-medium">
@@ -191,10 +193,14 @@ const Contact = () => {
               <p>24/7</p>
             </div>
           </div>
-          <div className="border text-logo-blue tex-sm border-logo-light bg-logo-light px-4 py-4 rounded-md shadow flex-col flex gap-2">
-            <div className="text-lg font-semibold text-logo-blue mb-3 flex gap-2">
-              <img src="/icons/phone.svg" alt="" className="w-4" />
-              Email{" "}
+          <div className=" text-white bg-logo-blue tex-sm    px-4 py-4 rounded-md shadow flex-col flex gap-2">
+            <div className="text-lg font-semibold text-logo-light mb-3 flex gap-2">
+              <img
+                src="/icons/email-1.svg"
+                alt="email"
+                className="w-4  "
+              />
+              Email
             </div>
             <div className=" flex justify-between text-sm font-medium">
               <a href="mailto:jomartengineeringservices@gmail.com">
