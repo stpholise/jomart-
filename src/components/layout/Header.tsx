@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { useLocation } from "react-router";
 import clsx from "clsx";
@@ -7,8 +7,15 @@ const Header = () => {
   const location = useLocation();
   const currentPathname = location.pathname;
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [currentPathname]);
   return (
-    <div className="w-full  sticky container mx-auto z-100 bg-white/99 top-0 rounded-xs shadow right-0 left-0 h-18  flex items-center justify-between gap-12 px-4 py-4 ">
+    <div className="w-full container sticky  mx-auto z-100 bg-white top-0 rounded-xs  right-0 left-0 h-18  flex items-center justify-between gap-12 px-4 py-4 ">
       <Link to={"/"} className="logo">
         <img
           src="/jomart.png"
