@@ -1,13 +1,18 @@
 import clsx from "clsx";
 import Feedbacks from "../components/utils/Feedbacks";
 import Hero from "../components/layout/Hero";
-// import OurTeams from "../components/OurTeams";
+import RequestForm from "../components/layout/RequestForm";
 import { Link } from "react-router";
+import { useState } from "react";
 
 const Home = () => {
+  const [openRequestForm, setOpenRequestForm] = useState(false);
   return (
     <div className="">
       <Hero />
+      {openRequestForm && (
+        <RequestForm setOpenRequestForm={setOpenRequestForm} />
+      )}
       <div className="flex flex-col gap-3 py-16 px-4 container mx-auto ">
         <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
         <div className="flex flex-col gap-3 md:flex-row">
@@ -50,7 +55,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-3 px-4 py-16">
+      <div className="flex flex-col gap-3 px-4 py-16 ">
         <h3 className="text-lg md:text-2xl text-logo-blue text-center my-4 font-medium  capitalize ">
           services
         </h3>
@@ -79,6 +84,12 @@ const Home = () => {
             </div>
           ))}
         </div>
+          <button
+            onClick={() => setOpenRequestForm(true)}
+            className=" bg-logo-blue cursor-pointer w-fit mx-auto py-2 px-4 font-medium text-white  hover:border-logo-light ease-in-out border shadow border-logo-blue rounded-lg my-2  "
+          >
+            Request a Quote
+          </button>
       </div>
       <div className="flex flex-col gap-3 px-4 py-16">
         <h3 className="text-lg md:text-2xl text-center my-4 text-logo-blue font-medium  capitalize ">
