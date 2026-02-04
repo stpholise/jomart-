@@ -2,7 +2,7 @@ import clsx from "clsx";
 import ReadyToStart from "../components/cards/ReadyToStart";
 const Projects = () => {
   return (
-    <div className="">
+    <div className="py-16">
       <div className="">
         <h2 className="text-center font-semibold text-3xl my-4 text-primary">
           {" "}

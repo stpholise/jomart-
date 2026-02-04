@@ -1,21 +1,21 @@
 import clsx from "clsx";
 import Feedbacks from "../components/utils/Feedbacks";
 import Hero from "../components/layout/Hero";
-import OurTems from "../components/OurTeams";
+// import OurTeams from "../components/OurTeams";
 import { Link } from "react-router";
 
 const Home = () => {
   return (
     <div className="">
       <Hero />
-      <div className="flex flex-col gap-3 pt-12 pb-8 px-4 container mx-auto">
+      <div className="flex flex-col gap-3 py-16 px-4 container mx-auto ">
         <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
         <div className="flex flex-col gap-3 md:flex-row">
           <div className="">
-            <h4 className="text-black text-xl font-semibold md:text-3xl mb-2">
+            <h4 className="text-black text-2xl font-semibold md:text-4xl mb-2">
               We are committed to providing the best
             </h4>
-            <p className="text-gray-800 text-sm font-normal md:text-base md:font-medium">
+            <p className="text-gray-700 text-sm font-normal md:text-base md:font-medium">
               Jomart Engineering Services Ltd is committed to providing the best
               in integrated construction solutions. For years, we have delivered
               high-quality projects built on a foundation of consistency,
@@ -24,9 +24,9 @@ const Home = () => {
               client satisfaction.
             </p>
           </div>
-          <div className="flex flex-col  w-full md:w-18/12 gap-4">
-            <div className="px-4 py-4 rounded-lg bg-logo-light">
-              <h5 className=" text-lg text-left font-medium mb-1 text-logo-blue">
+          <div className="flex flex-col  w-full md:w-7/2 gap-4">
+            <div className="px-4 pb-4 pt-8 rounded-lg bg-logo-light">
+              <h5 className=" text-lg text-left font-medium mb-3 text-logo-blue">
                 Our Goals
               </h5>
               <p className="text-sm text-gray-100">
@@ -35,8 +35,8 @@ const Home = () => {
                 delivery.
               </p>
             </div>
-            <div className="px-4 py-4 rounded-lg bg-logo-light">
-              <h5 className="text-lg font-medium text-left text-logo-blue mb-1">
+            <div className="px-4 pb-4 pt-8 rounded-lg bg-logo-light">
+              <h5 className="text-lg font-medium text-left text-logo-blue mb-3">
                 {" "}
                 Our Mission
               </h5>
@@ -50,11 +50,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-3 px-4 py-8">
-        <h3 className="text-lg text-logo-blue text-center my-4 font-medium  uppercase ">
+      <div className="flex flex-col gap-3 px-4 py-16">
+        <h3 className="text-lg md:text-2xl text-logo-blue text-center my-4 font-medium  capitalize ">
           services
         </h3>
-        <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className=" bg-[url('/images/92723fd12ca70c93f3a459325056b1e3.png')] bg-cover bg-center rounded-xl px-4 py-4 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {services.map((item, index) => (
             <div
               key={index}
@@ -80,11 +80,11 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-3 px-4 py-8">
-        <h3 className="text-lg text-center my-4 text-logo-blue font-medium  uppercase ">
+      <div className="flex flex-col gap-3 px-4 py-16">
+        <h3 className="text-lg md:text-2xl text-center my-4 text-logo-blue font-medium  capitalize ">
           Projects
         </h3>
-        <div className=" container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className=" container px-4 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {services.map((item, index) => (
             <div
               data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
@@ -113,20 +113,12 @@ const Home = () => {
           to={"/projects"}
           className=" bg-logo-blue cursor-pointer w-fit mx-auto py-2 px-4 font-medium text-white  hover:border-logo-light ease-in-out border shadow border-logo-blue rounded-lg my-2  "
         >
-          {" "}
           See All Projects
         </Link>
       </div>
-      <OurTems />
-      <div className="">
-        <h3 className="text-lg text-center mb-3 font-medium text-logo-blue uppercase ">
-          Feedbacks
-        </h3>
+      {/* <OurTeams /> */}
 
-        <div className=" min-h-12 h-fit py-4 w-full px-4 flex items-center">
-          <Feedbacks items={feedbacksItems} />
-        </div>
-      </div>
+      <Feedbacks items={feedbacksItems} />
     </div>
   );
 };
@@ -135,32 +127,42 @@ const feedbacksItems = [
   {
     message:
       "“Jomart Engineering brought our dream home to life! From planning to finish, their team was professional, communicative, and detail-oriented. The quality of workmanship exceeded our expectations. We couldn’t be happier!”",
-    name: "Mrs. Aisha Bello, ",
+    name: "Mrs. Aisha Bello",
+    occupation: "Trader",
     location: "Port Harcourt",
+    image: "",
   },
   {
     message:
       "“Working with Jomart on our office building project was a seamless experience. They managed the schedule perfectly and delivered on time without compromising quality. Their expertise made a big difference.”",
-    name: "Mr. Chinedu Okeke, CEO, Okeke Enterprises",
+    name: "Mr. Chinedu Okeke, ",
+    occupation: "CEO, Okeke Entaprise",
     location: "Warri, Delta State",
+    image: "/images/ai_passport_1.jpeg",
   },
   {
     message:
       "“Jomart Engineering handled our renovation with impressive skill and care. They respected our budget and communicated clearly throughout. The final result transformed our space beautifully.”",
     name: "Mrs. Funke Adeyemi",
+    occupation: "Teacher",
     location: "Lagos",
+    image: "",
   },
   {
     message:
       "“We are extremely satisfied with Jomart’s workmanship. Their site team was professional and respectful, and the project was completed ahead of schedule. Highly recommended!”",
-    name: "Mr. Michael Udo, Udo Construction Supplies",
+    name: "Mr. Michael Udo",
+    occupation: "CEO, Udo Construction Supplies",
     location: "Delta State",
+    image: "",
   },
   {
     message:
       ' “Jomart Engineering provided excellent project management and attention to detail on our commercial project. Their engineers and workers were reliable and skilled. A trustworthy construction partner!”, name: "dummy name"',
-    name: "Mrs. Grace Nwosu, Owner of GreenLeaf Supermarket",
+    name: "Mrs. Grace Nwosu ",
+    occupaton: "Owner of GreenLeaf Supermarket",
     location: "Delta State",
+    image: "",
   },
 ];
 

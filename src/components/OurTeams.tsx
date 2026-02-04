@@ -1,8 +1,8 @@
  
 const OurTeams = () => {
   return (
-    <div className="container mx-auto my-10">
-      <h4 className="text-center text-lg font-medium  text-logo-blue my-4">
+    <div className="container mx-auto py-16">
+      <h4 className="text-center text-lg md:text-2xl font-medium  text-logo-blue my-4">
         Meet Our Leaders
       </h4>
       <div className="py-4 px-4 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-4">

@@ -8,9 +8,14 @@ const Header = () => {
   const currentPathname = location.pathname;
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   return (
-    <div className="w-full h-14 border-gray-400 border-b flex items-center justify-between gap-12 px-6 py-4 ">
+    <div className="w-full  sticky container mx-auto z-100 bg-white/99 top-0 rounded-xs shadow right-0 left-0 h-18  flex items-center justify-between gap-12 px-4 py-4 ">
       <Link to={"/"} className="logo">
-        <img src="/jomart.png" alt="logo" fetchPriority="high" className="w-30 h-10" />
+        <img
+          src="/jomart.png"
+          alt="logo"
+          fetchPriority="high"
+          className="w-30 h-15"
+        />
       </Link>
 
       <div className="flex">
@@ -19,7 +24,12 @@ const Header = () => {
           onClick={() => setOpenMenu((prev) => !prev)}
           className="flex sm:hidden"
         >
-          <img src="/icons/menu.svg" fetchPriority="high"  alt="menu btn" className="w-8 h-8" />
+          <img
+            src="/icons/menu.svg"
+            fetchPriority="high"
+            alt="menu btn"
+            className="w-8 h-8"
+          />
         </button>
       </div>
       <div
@@ -35,18 +45,22 @@ const Header = () => {
           <img src="/icons/close.svg" alt="close" className="w-4 h-4" />
         </button>
         {navLinks.map((item, index) => (
-          <Link
-            to={item.href}
-            className={clsx(
-              "text-xl sm:text-sm font-medium  hover:bg-blue-400 sm:hover:bg-transparent sm:hover:border-b-2 border-b border-gray-200 sm:border-0   px-4 mb-1  py-2 uppercase",
-              currentPathname == item.href ? "text-white sm:text-logo-blue" : "text-primary",
-            )}
-            key={index}
-            onClick={() => setOpenMenu(false)}
-          >
-            {" "}
-            {item.name}
-          </Link>
+          <div className="px-4">
+            <Link
+              to={item.href}
+              className={clsx(
+                "text-xl sm:text-sm font-medium  hover:bg-blue-400 sm:hover:bg-transparent sm:hover:border-b-2 border-b border-gray-200 sm:border-0    mb-1 px-1  py-2 capitalize",
+                currentPathname == item.href
+                  ? "text-white sm:text-primary sm:border-b-2 border-b-primary"
+                  : "text-primary",
+              )}
+              key={index}
+              onClick={() => setOpenMenu(false)}
+            >
+              {" "}
+              {item.name}
+            </Link>
+          </div>
         ))}
       </div>
       <div
