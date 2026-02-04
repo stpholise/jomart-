@@ -1,4 +1,11 @@
-import { MapContainer, TileLayer, Marker, Popup, Circle } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  Circle,
+} from "react-leaflet";
+// import {  } from 'react-leaflet/hooks'
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import type { LatLngExpression } from "leaflet";
@@ -13,7 +20,7 @@ delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: () => string })
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: iconRetina,
   iconUrl: icon,
-  shadowUrl: shadow, 
+  shadowUrl: shadow,
 });
 const customIcon = new L.Icon({
   iconUrl: icon,
@@ -31,8 +38,9 @@ const LeafletMap = () => {
     <div className="">
       <MapContainer
         center={position}
-        zoom={13}
+        zoom={12}
         style={{ height: "300px", width: "100%" }}
+        className="relative z-0"
         scrollWheelZoom
       >
         <TileLayer
@@ -41,17 +49,36 @@ const LeafletMap = () => {
         />
         <Marker position={position} icon={customIcon}>
           <Popup>
-            <p>
-              <strong>
-                Jomart Engineering Services Ltd <br />
-              </strong>
-              123 Engineering Road
-              <br />
-              Lagos, Nigeria
-            </p>
+            <div className="">
+              <p>
+                <strong>
+                  Jomart Engineering Services Ltd <br />
+                </strong>
+                123 Engineering Road
+                <br />
+                Lagos, Nigeria
+              </p>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=6.358333,5.735"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded bg-logo-blue px-3 py-1 text-sm text-white"
+              >
+                Get Directions
+              </a>
+            </div>
           </Popup>
         </Marker>
-      </MapContainer> 
+        <Circle
+          center={position}
+          radius={80}
+          pathOptions={{
+            color: "#6228d7",
+            fillColor: "#99c4e0",
+            fillOpacity: 0.25,
+          }}
+        />
+      </MapContainer>
     </div>
   );
 };
