@@ -15,43 +15,44 @@ const Header = () => {
     });
   }, [currentPathname]);
   return (
-    <div className="w-full container sticky  mx-auto z-100 bg-white top-0 rounded-xs  right-0 left-0 h-18  flex items-center justify-between gap-12 px-4 py-4 ">
-      <Link to={"/"} className="logo">
-        <img
-          src="/jomart.png"
-          alt="logo"
-          fetchPriority="high"
-          className="w-30 h-15"
-        />
-      </Link>
-
-      <div className="flex">
-        <nav></nav>
-        <button
-          onClick={() => setOpenMenu((prev) => !prev)}
-          className="flex sm:hidden"
-        >
+    <div className="border-b-gray-300 border-b sticky top-0 right-0 left-0 bg-white z-100">
+      <div className="w-full container    mx-auto z-100 bg-white  rounded-xs  h-18  flex items-center justify-between gap-12 px-4 py-4 ">
+        <Link to={"/"} className="logo">
           <img
-            src="/icons/menu.svg"
+            src="/jomart.png"
+            alt="logo"
             fetchPriority="high"
-            alt="menu btn"
-            className="w-8 h-8"
+            className="w-30 h-15"
           />
-        </button>
-      </div>
-      <div
-        className={clsx(
-          "sm:static fixed  top-0 left-0 bottom-0 right-0  z-15  w-75 sm:w-full sm:justify-end bg-logo-blue sm:bg-transparent sm:items-center  flex flex-col sm:flex-row gap-1 sm:gap-2 py-24 sm:py-1 px-4  transform duration-700 h-full",
-          openMenu ? "translate-x-0" : "-translate-x-full sm:translate-x-0",
-        )}
-      >
-        <button
-          onClick={() => setOpenMenu(false)}
-          className="flex sm:hidden absolute top-4 right-4 bg-gray-400 p-2 rounded-full h-8 w-8  items-center justify-center"
+        </Link>
+
+        <div className="flex">
+          <nav></nav>
+          <button
+            onClick={() => setOpenMenu((prev) => !prev)}
+            className="flex sm:hidden"
+          >
+            <img
+              src="/icons/menu.svg"
+              fetchPriority="high"
+              alt="menu btn"
+              className="w-8 h-8"
+            />
+          </button>
+        </div>
+        <div
+          className={clsx(
+            "sm:static fixed  top-0 left-0 bottom-0 right-0  z-15  w-75 sm:w-full sm:justify-end bg-logo-blue sm:bg-transparent sm:items-center  flex flex-col sm:flex-row gap-1 sm:gap-2 py-24 sm:py-1 px-4  transform duration-700 h-full",
+            openMenu ? "translate-x-0" : "-translate-x-full sm:translate-x-0",
+          )}
         >
-          <img src="/icons/close.svg" alt="close" className="w-4 h-4" />
-        </button>
-        {navLinks.map((item, index) => ( 
+          <button
+            onClick={() => setOpenMenu(false)}
+            className="flex sm:hidden absolute top-4 right-4 bg-gray-400 p-2 rounded-full h-8 w-8  items-center justify-center"
+          >
+            <img src="/icons/close.svg" alt="close" className="w-4 h-4" />
+          </button>
+          {navLinks.map((item, index) => (
             <Link
               to={item.href}
               className={clsx(
@@ -65,16 +66,17 @@ const Header = () => {
             >
               {" "}
               {item.name}
-            </Link> 
-        ))}
+            </Link>
+          ))}
+        </div>
+        <div
+          onClick={() => setOpenMenu(false)}
+          className={clsx(
+            " overlay sm:hidden backdrop-blur-xs fixed top-0 left-0 right-0 bottom-0 transform  z-10 bg-[rgba(0,0,0,0.4)] ",
+            openMenu ? "flex  w-full" : " w-0 h-0 opacity-0 duration-500",
+          )}
+        ></div>
       </div>
-      <div
-        onClick={() => setOpenMenu(false)}
-        className={clsx(
-          " overlay sm:hidden backdrop-blur-xs fixed top-0 left-0 right-0 bottom-0 transform  z-10 bg-[rgba(0,0,0,0.4)] ",
-          openMenu ? "flex  w-full" : " w-0 h-0 opacity-0 duration-500",
-        )}
-      ></div>
     </div>
   );
 };
