@@ -24,11 +24,10 @@ const responsiveness = {
 
 const Hero = () => {
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <Carousel
         swipeable
-        arrows
-        showDots
+        arrows 
         className="  w-full"
         responsive={responsiveness}
         autoPlay={true}
@@ -44,14 +43,14 @@ const Hero = () => {
             <div className=" w-full h-full ">
                 <img  src={item.image} alt="hero" loading="eager" fetchPriority="high"  className="w-full h-full object-cover" />
             </div>
-            <div className="  absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-4 h-full sm:px-8 py-12 sm:py-8 gap-8 md:gap-12 ">
+            <div className="  absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-4 h-full sm:px-8 py-16 sm:py-8 gap-8 md:gap-12 ">
               <h2 className=" max-w-150 text-3xl md:text-5xl text-white text-center font-medium ">
                 {item.title}
               </h2>
               <p className="text-base max-w-150 text-white text-center">
                 {item.description}
               </p>
-              <Link to={"/about"} className="text-white bg-logo-blue px-6 py-1.5 rounded-lg font-medium text-sm mt-auto " >About us</Link>
+              <Link to={"/about"} className="text-white bg-logo-blue px-6 py-1.5 rounded-lg font-medium text-sm  " >About us</Link>
             </div>
           </div>
         ))}

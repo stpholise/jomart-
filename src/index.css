@@ -9,18 +9,18 @@
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1240px;
   --breakpoint-2xl: 1440px;
-  --color-logo-light: #e0a899;
+  --color-logo-light: #99c4e0;
   --color-logo-blue: #113f70;
   --color-primary: #f07529;
-   --animate-rotate-one: rotate-one 1s linear infinite;
+  --animate-rotate-one: rotate-one 1s linear infinite;
   --animate-rotate-two: rotate-two 1s linear infinite;
   --animate-rotate-three: rotate-three 1s linear infinite;
   --animate-marquee: marquee 20s linear infinite;
 }
 .react-multiple-carousel__arrow {
   z-index: 10 !important;
+  background: rgba(153, 196, 224, 0.5) !important ;
 }
-
 
 @keyframes rotate-one {
   0% {
@@ -47,7 +47,6 @@
   100% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
-
 }
 
 @keyframes marquee {
@@ -58,7 +57,6 @@
     transform: translateX(-100%);
   }
 }
-
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

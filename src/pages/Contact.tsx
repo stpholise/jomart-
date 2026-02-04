@@ -45,7 +45,7 @@ const Contact = () => {
   };
   return (
     <div>
-      <div className="container mx-auto my-12">
+      <div className="container mx-auto pt-16">
         <h2 className="font-bold text-primary text-3xl text-center mb-4 ">
           Contact
         </h2>
@@ -53,9 +53,9 @@ const Contact = () => {
           Get in touch with our team for any questions or project inquiries
         </p>
       </div>
-      <div className="flex flex-col md:flex-row container mx-auto py-8 px-4 gap-6">
+      <div className="flex flex-col md:flex-row container mx-auto py-16 px-4 gap-6">
         <div className="container mx-auto  flex flex-col gap-4     max-w-150    ">
-          <div className="mb-4 max-w-120 md:mx-auto md:w-120 shadow-2xl">
+          <div className="mb-10 max-w-120 md:mx-auto md:w-120 shadow-2xl">
             <Formik initialValues={initialValues} onSubmit={submitMessage}>
               {({ isSubmitting }) => (
                 <Form className="border border-gray-200 bg-logo-blue flex flex-col rounded-lg px-6 py-6 gap-4 max-w-xl mx-auto">
