@@ -56,10 +56,10 @@ const Header = () => {
             <Link
               to={item.href}
               className={clsx(
-                "text-xl    sm:text-sm font-medium border-b-0 hover:bg-blue-400 sm:hover:bg-transparent sm:hover:border-b-2 sm:border-b-0  border-gray-200 sm:border-0  sm:mx-4  mb-1 px-1  py-2 capitalize",
+                "text-xl   cursor-pointer sm:text-sm font-medium transform-stroke duration-50 ease-in-out border-b-0 hover:bg-blue-400  sm:hover:bg-transparent  sm:border-b-0  border-gray-200 sm:mx-4  mb-1 px-1  py-2 capitalize",
                 currentPathname == item.href
-                  ? "text-white sm:text-primary sm:border-b-2 sm:border-b-primary border-b-2 "
-                  : "text-primary border-b-primary  border-b-2 sm:hover:border-gray-300",
+                  ? "text-white sm:text-secondary sm:border-b-2 sm:border-b-secondary border-b-2 "
+                  : "text-primary sm:text-secondary sm:hover:text-primary border-b-primary  border-b-2 sm:hover:border-b-0 ",
               )}
               key={index}
               onClick={() => setOpenMenu(false)}
