@@ -5,8 +5,8 @@ const Footer = () => {
     <div className="w-full relative   bg-logo-blue bg-cover">
       
       <div className="">
-        <div className="container mx-auto  ">
-          <div className="flex  py-8 px-8 flex-col sm:flex-row  gap-4 sm:gap-12">
+        <div className="container mx-auto py-4  ">
+          <div className="flex py-12  px-8 flex-col sm:flex-row  gap-10 sm:gap-12">
             <div className=" w-full xs:w-70 flex flex-col  gap-4">
               <h4 className="text-lg text-primary font-semibold">Contact</h4>
               <div className="flex flex-col gap-3 text-gray-200">
