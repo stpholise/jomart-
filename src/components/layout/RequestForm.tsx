@@ -30,8 +30,7 @@ const RequestForm = ({
     name: "",
     phone: "",
     email: "",
-    region: "",
-    // num_of_floors: 1,
+    region: "", 
     type: "",
     image: "",
     building_type: "",
@@ -82,7 +81,7 @@ const RequestForm = ({
 
   return (
     <>
-      <div className=" fixed text-[#262626] top-0 left-0 right-0 bottom-0 sm:left-1/2 sm:right-1/2 sm:top-1/2 sm:-translate-1/2 lg:top1/2 lg:bottom-1/2 lg:left-1/2 lg:right-1/2 lg:-translate-x-1/2 sm:-translate-x-1/2  w-full rounded-lg px-4 py-4 lg:px-6 lg:py-6 max-w-xl z-80  lg:w-140 lg:max-h-150  sm:h-200 bg-white shadow-xl">
+      <div className=" fixed text-[#262626] top-0 left-0 right-0 bottom-0 sm:left-1/2 sm:right-1/2 sm:top-1/2 sm:-translate-1/2 lg:top1/2 lg:bottom-1/2 lg:left-1/2 lg:right-1/2 lg:-translate-x-1/2 sm:-translate-x-1/2  w-full rounded-lg px-4 py-4 lg:px-6 lg:py-6 max-w-xl z-110  lg:w-140 lg:max-h-150  sm:h-200 bg-white shadow-xl">
         {loading && (
           <div className="absolute top-1/2 left-1/2 right-1/2 z-50">
             <TrippleSpiner />
