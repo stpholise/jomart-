@@ -2,9 +2,9 @@ import { Link } from "react-router";
 
 const Footer = () => {
    return (
-    <div className="w-full relative   bg-[url(/images/20962c278b53a3feef1fb61407669c94.png)] bg-cover">
+    <div className="w-full relative   bg-logo-blue bg-cover">
       
-      <div className="bg-black/50">
+      <div className="">
         <div className="container mx-auto  ">
           <div className="flex  py-8 px-8 flex-col sm:flex-row  gap-4 sm:gap-12">
             <div className=" w-full xs:w-70 flex flex-col  gap-4">
@@ -84,7 +84,7 @@ const Footer = () => {
           </div>{" "}
           <div className="text-xs font-medium text-white text-center py-4 px-4 border-t border-gray-200 flex flex-col  sm:flex-row sm:justify-between items-center gap-4">
             <p>&copy; 2026 All rights reserved.</p>
-            <div className="flex  gap-3 item-center justify-start  border border-gray-100 rounded-2xl py-1 px-6 ">
+            <div className="flex  gap-3 item-center justify-start   py-1 px-6 ">
               {socials.map((item, index) => (
                 <Link
                   key={index}

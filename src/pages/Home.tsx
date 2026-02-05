@@ -15,7 +15,7 @@ const Home = () => {
       )}
       <div className="flex flex-col gap-3 py-16 px-4 container mx-auto ">
         <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
-        <div className="flex flex-col gap-3 md:flex-row">
+        <div className="flex flex-col gap-5  sm:gap-10 md:flex-row">
           <div className="">
             <h4 className="text-black text-2xl font-semibold md:text-4xl mb-2">
               We are committed to providing the best

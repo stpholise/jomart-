@@ -62,7 +62,7 @@ const Feedbacks = ({ items }: { items: Items[] }) => {
                     {item.message}
                   </p>
                   <div className="flex items-center gap-3 mt-auto">
-                    <div className="rounded-full bg-amber-50 text-amber-400 size-8 overflow-hidden border-gray-100 border font-medium text-sm flex items-center justify-center">
+                    <div className="rounded-full bg-amber-50 text-logo-blue size-8 overflow-hidden border-gray-100 border font-medium text-sm flex items-center justify-center">
                       {item.image ? (
                         <img src={item.image} alt="" />
                       ) : (
