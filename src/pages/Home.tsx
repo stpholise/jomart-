@@ -17,7 +17,7 @@ const Home = () => {
         <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
         <div className="flex flex-col gap-5  sm:gap-10 md:flex-row">
           <div className="">
-            <h4 className="text-black text-2xl font-semibold md:text-4xl mb-2">
+            <h4 className="text-black text-2xl font-semibold md:text-4xl mb-3 sm:mb-4">
               We are committed to providing the best
             </h4>
             <p className="text-gray-700 text-sm font-normal md:text-base md:font-medium">
@@ -30,22 +30,22 @@ const Home = () => {
             </p>
           </div>
           <div className="flex flex-col  w-full md:w-7/2 gap-4">
-            <div className="px-4 pb-4 pt-8 rounded-lg bg-logo-light">
-              <h5 className=" text-lg text-left font-medium mb-3 text-logo-blue">
+            <div className="px-4 pb-4 pt-8 rounded-lg border border-secondary shadow bg-gray-50">
+              <h5 className=" text-lg text-left font-medium mb-3 text-primary bg">
                 Our Goals
               </h5>
-              <p className="text-sm text-gray-100">
+              <p className="text-sm text-black">
                 We believe in a proactive approach to every aspect of our
                 business, with special emphasis on quality, safety, and on-time
                 delivery.
               </p>
             </div>
-            <div className="px-4 pb-4 pt-8 rounded-lg bg-logo-light">
-              <h5 className="text-lg font-medium text-left text-logo-blue mb-3">
+            <div className="px-4 pb-4 pt-8 rounded-lg bg-gray-50 border-secondary border shadow">
+              <h5 className="text-lg font-medium text-left text-primary mb-3">
                 {" "}
                 Our Mission
               </h5>
-              <p className="text-sm text-gray-100">
+              <p className="text-sm text-black">
                 To deliver exceptional engineering and construction services
                 that not only meet but exceed client expectations—through
                 innovation, skilled workmanship, and an uncompromising
