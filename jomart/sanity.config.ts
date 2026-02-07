@@ -7,6 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'jomart',
 
+  basePath: '/studio',
+
   projectId: 'k2vaicf9',
   dataset: 'production',
 
