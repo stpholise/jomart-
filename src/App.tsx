@@ -7,12 +7,13 @@ import Footer from "./components/layout/Footer";
 import Projects from "./pages/Projects";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
+import ProjectDetail from "./pages/ProjectDetail";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 function App() {
-   AOS.init()
+  AOS.init();
   return (
     <>
       <BrowserRouter>
@@ -23,8 +24,9 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/Faq" element={<Faq />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
         </Routes>
-         <Footer />
+        <Footer />
       </BrowserRouter>
     </>
   );
