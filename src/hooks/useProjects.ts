@@ -29,7 +29,7 @@ export interface ProjectType {
 export const useProjects = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error | string | null>(null);
+  const [error, setError] = useState< string | null>(null);
 
   const fetchData = useCallback(async () => {
     try {
