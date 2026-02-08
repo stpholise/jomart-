@@ -4,9 +4,15 @@ import Hero from "../components/layout/Hero";
 import RequestForm from "../components/layout/RequestForm";
 import { Link } from "react-router";
 import { useState } from "react";
+import { TrippleSpiner } from "../components/utils/Loading";
+// import ProjectsWrapper from "../components/wrapper/ProjectsWrapper";
+import { useProjects } from "../hooks/useProjects";
+import type { ProjectType } from "../hooks/useProjects";
 
 const Home = () => {
   const [openRequestForm, setOpenRequestForm] = useState(false);
+  const { projects, loading, error } = useProjects();
+
   return (
     <div className="">
       <Hero />
@@ -84,41 +90,62 @@ const Home = () => {
             </div>
           ))}
         </div>
-          <button
-            onClick={() => setOpenRequestForm(true)}
-            className=" bg-logo-blue cursor-pointer w-fit mx-auto py-2 px-4 font-medium text-white  hover:border-logo-light ease-in-out border shadow border-logo-blue rounded-lg my-2  "
-          >
-            Request a Quote
-          </button>
+        <button
+          onClick={() => setOpenRequestForm(true)}
+          className=" bg-logo-blue cursor-pointer w-fit mx-auto py-2 px-4 font-medium text-white  hover:border-logo-light ease-in-out border shadow border-logo-blue rounded-lg my-2  "
+        >
+          Request a Quote
+        </button>
       </div>
       <div className="flex flex-col gap-3 px-4 py-16">
         <h3 className="text-lg md:text-2xl text-center my-4 text-logo-blue font-medium  capitalize ">
           Projects
         </h3>
-        <div className=" container px-4 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {services.map((item, index) => (
-            <div
-              data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
-              data-aos-duration="600"
-              data-aos-once="true"
-              key={index}
-              className={clsx(
-                ` border border-gray-200 px-3 py-3 bg-white shadow cursor-pointer overflow-hidden rounded-lg flex flex-col gap-3  h-fit bg-cover bg-center`,
-              )}
-            >
-              <div className="w-full  h-40 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
-                <img
-                  src={`/images/${item.image}`}
-                  alt=""
-                  className="h-full object-cover w-full "
-                />
+
+        <div className="relative container px-4 py-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 min-h-80">
+          {loading ? (
+            <TrippleSpiner />
+          ) : error ? (
+            <div className="">sorry an error occured</div>
+          ) : (
+            projects.slice(0, 6).map((item: ProjectType, index) => (
+              <div
+                data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
+                data-aos-duration="600"
+                data-aos-once="true"
+                key={index}
+                className={clsx(
+                  ` border  h-full bg-gray-50 shadow hover:shadow-xl border-gray-200 overflow-hidden cursor-pointer  rounded-lg flex flex-col gap-2  bg-cover bg-center`,
+                )}
+              >
+                <div className="w-full rounded-t-lg  min-h-45 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
+                  <img
+                    src={`${item.gallery[0].asset.url}`}
+                    alt="image"
+                    className="h-full rounded-t-lg object-cover w-full  "
+                  />
+                </div>
+                <div className="min-h-45 px-4 py-5 flex-col flex  h-fit sm:h-full gap-4">
+                  <h3 className="text-secondary font-semibold text-lg capitalize ">
+                    {item.name}
+                  </h3>
+                  <div className=" text-xs font-medium flex gap-2 items-center  ">
+                    <img
+                      src="/icons/location-dark.svg"
+                      alt="location icon"
+                      className="w-3 h-3"
+                    />
+                    <p className="text-gray-800">{item.location}</p>
+                  </div>
+
+                  <button className="bg-secondary cursor-pointer text-white font-semibold text-sm py-2.5 px-8 rounded-md shadow-md  text-center mt-auto  w-full">
+                    {" "}
+                    See Project
+                  </button>
+                </div>
               </div>
-              <button className="bg-primary cursor-pointer text-white font-medium text-sm py-2 px-4 rounded-lg text-center ">
-                {" "}
-                See Project
-              </button>
-            </div>
-          ))}
+            ))
+          )}
         </div>
         <Link
           to={"/projects"}
