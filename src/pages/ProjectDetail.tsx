@@ -32,16 +32,16 @@ const ProjectDetail = () => {
           <div className="h-60"></div>
         ) : projectData ? (
           <div className="">
-            <div className="h-100 overflow-hidden">
-              <img src={projectData.gallery[0].asset.url} alt="" />
+            <div className="h-50 sm:h-100 overflow-hidden">
+              <img src={projectData.gallery[0].asset.url} alt="" className="object-cover w-full h-full" />
             </div>
 
-            <div className="flex  w-full py-12 lg:gap-10 sm:gap-8 gap-6">
+            <div className="flex flex-col sm:flex-row  px-4 w-full py-12 md:py-16 lg:gap-10 sm:gap-9 gap-8">
               <div className="">
-                <h2 className="text-3xl font-bold capitalize pt-4 pb- text-secondary">
+                <h2 className="text-3xl font-bold capitalize pt-4  text-secondary">
                   {projectData.name}
                 </h2>
-                <p className=" text-secondary font-medium">{projectData.location}</p>
+                <p className=" text-secondary font-medium py-2">{projectData.location}</p>
                 <PortableTextRender value={projectData.description} />
               </div>
               <div className=" sm:min-w-86 sm:max-w-86 h-fit  border border-secondary rounded-lg px-4 py-6  shadow">
@@ -52,7 +52,7 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            <div className="container mx-auto h-60">
+            <div className="container mx-auto min-h-60 py-10 mb-5">
               <Carousel
                 swipeable
                 arrows
