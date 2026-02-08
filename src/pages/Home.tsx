@@ -5,13 +5,14 @@ import RequestForm from "../components/layout/RequestForm";
 import { Link } from "react-router";
 import { useState } from "react";
 import { TrippleSpiner } from "../components/utils/Loading";
-// import ProjectsWrapper from "../components/wrapper/ProjectsWrapper";
 import { useProjects } from "../hooks/useProjects";
 import type { ProjectType } from "../hooks/useProjects";
+import { useNavigate } from "react-router";
 
 const Home = () => {
   const [openRequestForm, setOpenRequestForm] = useState(false);
   const { projects, loading, error } = useProjects();
+  const navigate = useNavigate();
 
   return (
     <div className="">
@@ -138,7 +139,9 @@ const Home = () => {
                     <p className="text-gray-800">{item.location}</p>
                   </div>
 
-                  <button className="bg-secondary cursor-pointer text-white font-semibold text-sm py-2.5 px-8 rounded-md shadow-md  text-center mt-auto  w-full">
+                  <button onClick={() => {
+                    navigate(`/projects/${item.slug.current}`)
+                  }} className="bg-secondary cursor-pointer text-white font-semibold text-sm py-2.5 px-8 rounded-md shadow-md  text-center mt-auto  w-full">
                     {" "}
                     See Project
                   </button>
@@ -153,8 +156,7 @@ const Home = () => {
         >
           See All Projects
         </Link>
-      </div>
-      {/* <OurTeams /> */}
+      </div> 
 
       <Feedbacks items={feedbacksItems} />
     </div>

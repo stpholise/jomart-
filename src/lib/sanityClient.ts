@@ -29,3 +29,26 @@ export const fetchProjects = async () => {
         }
         `);
 };
+
+export const fetchProjectData = async (slug: string) => {
+  return sanityClient.fetch(`
+    *[_type == "project" && slug.current == $slug][0] {
+      _id,
+        name,
+        slug,
+        completed,
+        location,
+        gallery[]{
+            asset->{
+            _id,
+            url,
+            },
+            caption
+        },
+        video,
+        description,
+        vision,
+    }
+    
+    `, {slug});
+};
