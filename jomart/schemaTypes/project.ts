@@ -25,7 +25,7 @@ export const projectType = defineType({
       name: 'description',
       title: 'Description',
       type: 'array',
-      of: [{type: 'block'}]
+      of: [{type: 'block'}],
     }),
     defineField({
       name: 'completed',
@@ -69,19 +69,19 @@ export const projectType = defineType({
         },
       ],
       description: 'Add images of the prgress and parts of this project',
-      validation: (Rule) => Rule.min(4).error("Add at least 4 images to gallery")
+      validation: (Rule) => Rule.min(4).error('Add at least 4 images to gallery'),
     }),
     defineField({
-        name: "video",
-        title: 'Video',
-        type: 'videoObject',
-    }), 
+      name: 'vision',
+      title: 'Project Vision',
+      type: 'text',
+    }),
     defineField({
-        name: "vision",
-        title: "Project Vision",
-        type: "text"
-    })
-
+      name: 'videos',
+      title: 'Videos',
+      type: 'array',
+      of: [{type: 'videoObject'}],
+    }),
   ],
   preview: {
     select: {
