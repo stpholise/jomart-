@@ -6,31 +6,53 @@ const About = () => {
   return (
     <div>
       <div className="flex flex-col gap-3 pt-12 pb-8 px-4 container mx-auto">
-        <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
         <div className="flex flex-col gap-3 ">
-          <div className="">
-            <h4 className="text-logo-blue text-xl font-medium md:text-3xl mb-2">
-              Who We Are
-            </h4>
-            <p className="text-gray-800 text-sm font-normal md:text-lg md:font-medium">
-              Jomart Engineering Services Ltd is a premier provider of
-              integrated construction solutions, combining decades of technical
-              expertise with forward-thinking innovation. We transform ambitious
-              visions into reality through precision engineering, collaborative
-              partnership, and unwavering commitment to excellence.
-            </p>
+          <div className="flex gap-4 sm:flex-row flex-col  py-4 sm:gap-9 md:gap-12 md:mt-12 items-center">
+            <div className="">
+              <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
+              <h4 className="text-logo-blue text-xl font-medium md:text-3xl mb-2">
+                Who We Are
+              </h4>
+              <p className="text-gray-800 text-sm font-normal md:text-lg md:font-medium">
+                Jomart Engineering Services Ltd is a premier provider of
+                integrated construction solutions, combining decades of
+                technical expertise with forward-thinking innovation. We
+                transform ambitious visions into reality through precision
+                engineering, collaborative partnership, and unwavering
+                commitment to excellence.
+              </p>
+            </div>
+            <div className="sm:min-w-60 md:min-w-79 w-full h-40 sm:h-80 rounded-lg overflow-hidden">
+              <img
+                src="/images/construction_site_stock_image.jpeg"
+                alt="construction site"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           <div className="">
-            <h4 className="text-logo-blue text-xl font-medium md:text-2xl mb-2">
-              Our Story
-            </h4>
-            <p className="text-gray-800 text-sm font-normal md:text-lg md:font-medium">
-              Founded on principles of quality and reliability, we've built our
-              reputation project by project, growing from a dedicated team of
-              specialists into a comprehensive engineering partner. Our journey
-              reflects our core belief: great engineering creates lasting
-              value—for clients, communities, and generations to come.
-            </p>
+            <div className="flex py-4 sm:flex-row flex-col gap-5 sm:gap-9  md:gap-12 md:mt-12 items-center">
+              <div className="sm:min-w-60 md:min-w-79 w-full h-40 sm:h-80 rounded-lg overflow-hidden">
+                <img
+                  src="/images/contruction_bien.jpeg"
+                  alt="construction site"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="">
+                <h4 className="text-logo-blue text-xl font-medium md:text-2xl mb-2">
+                  Our Story
+                </h4>
+                <p className="text-gray-800 text-sm font-normal md:text-lg md:font-medium">
+                  Founded on principles of quality and reliability, we've built
+                  our reputation project by project, growing from a dedicated
+                  team of specialists into a comprehensive engineering partner.
+                  Our journey reflects our core belief: great engineering
+                  creates lasting value—for clients, communities, and
+                  generations to come.
+                </p>
+              </div>
+            </div>
             <div className="flex flex-col gap-2.5 container mx-auto my-8 items-center">
               <h3 className="text-xl text-logo-blue font-medium my-2">
                 {" "}

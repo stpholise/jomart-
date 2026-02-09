@@ -12,7 +12,7 @@ const OurTeams = () => {
               <img
                 src={`${item.image}`}
                 alt="image"
-                className="w-full object-cover md:object-top  first:object-cover h-80 xs:h-40 md:h-90 overflow-hidden object-center"
+                className="w-full object-cover md:object-top  first:object-cover h-80 xs:h-40 sm:h-60 md:h-90 overflow-hidden object-center"
               />
             </div>
             <h4 className="text-base capitalize font-semibold text-center">
