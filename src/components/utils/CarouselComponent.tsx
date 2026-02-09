@@ -9,7 +9,7 @@ const responsiveness = {
   },
   tablet: {
     breakpoint: { max: 1024, min: 460 },
-    items: 3,
+    items: 2,
     slidesToSlide: 1,
   },
   mobile: {
