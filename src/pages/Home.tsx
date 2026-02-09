@@ -8,10 +8,11 @@ import { TrippleSpiner } from "../components/utils/Loading";
 import { useProjects } from "../hooks/useProjects";
 import type { ProjectType } from "../hooks/useProjects";
 import { useNavigate } from "react-router";
+import ErrorCard from "../components/cards/ErrorCard";
 
 const Home = () => {
   const [openRequestForm, setOpenRequestForm] = useState(false);
-  const { projects, loading, error } = useProjects();
+  const { projects, loading, error, refetch } = useProjects();
   const navigate = useNavigate();
 
   return (
@@ -62,7 +63,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-3 px-4 py-16 ">
+      <div className="flex flex-col gap-3 px-4 py-8 sm:py-12 md:py-16 ">
         <h3 className="text-lg md:text-2xl text-logo-blue text-center my-4 font-medium  capitalize ">
           services
         </h3>
@@ -98,7 +99,7 @@ const Home = () => {
           Request a Quote
         </button>
       </div>
-      <div className="flex flex-col gap-3 px-4 py-16">
+      <div className="flex flex-col gap-3 px-4 py-8 sm:py-12 md:py-16">
         <h3 className="text-lg md:text-2xl text-center my-4 text-logo-blue font-medium  capitalize ">
           Projects
         </h3>
@@ -107,7 +108,9 @@ const Home = () => {
           {loading ? (
             <TrippleSpiner />
           ) : error ? (
-            <div className="">sorry an error occured</div>
+            <div className=" py-8">
+              <ErrorCard refetch={refetch} />
+            </div>
           ) : (
             projects.slice(0, 6).map((item: ProjectType, index) => (
               <div
@@ -139,9 +142,12 @@ const Home = () => {
                     <p className="text-gray-800">{item.location}</p>
                   </div>
 
-                  <button onClick={() => {
-                    navigate(`/projects/${item.slug.current}`)
-                  }} className="bg-secondary cursor-pointer text-white font-semibold text-sm py-2.5 px-8 rounded-md shadow-md  text-center mt-auto  w-full">
+                  <button
+                    onClick={() => {
+                      navigate(`/projects/${item.slug.current}`);
+                    }}
+                    className="bg-secondary cursor-pointer text-white font-semibold text-sm py-2.5 px-8 rounded-md shadow-md  text-center mt-auto  w-full"
+                  >
                     {" "}
                     See Project
                   </button>
@@ -156,7 +162,7 @@ const Home = () => {
         >
           See All Projects
         </Link>
-      </div> 
+      </div>
 
       <Feedbacks items={feedbacksItems} />
     </div>
