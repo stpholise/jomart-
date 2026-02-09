@@ -1,39 +1,31 @@
 import { Link } from "react-router";
 
 const Footer = () => {
-   return (
+  return (
     <div className="w-full relative   bg-logo-blue bg-cover">
-      
       <div className="">
         <div className="container mx-auto py-4  ">
           <div className="flex py-12  px-8 flex-col sm:flex-row  gap-10 sm:gap-12">
+            <div className="flex flex-col gap-3 xs:w-70">
+              <h4 className="text-lg text-primary font-semibold">Company</h4>
+              {navLinks.map((item, index) => (
+                <Link
+                  to={item.href}
+                  className={
+                    "text-xl sm:text-sm font-medium  :border-0    text-gray-200  capitalize"
+                  }
+                  key={index}
+                >
+                  {" "}
+                  {item.name}
+                </Link>
+              ))}
+            </div>
             <div className=" w-full xs:w-70 flex flex-col  gap-4">
               <h4 className="text-lg text-primary font-semibold">Contact</h4>
               <div className="flex flex-col gap-3 text-gray-200">
-                <div className="flex gap-2 items-center justify-center">
-                  <div className="">
-                    <img
-                      src="/icons/location.svg"
-                      alt="location icon"
-                      className="w-6 h-6/12"
-                    />
-                  </div>
-                  <p>
-                    1, Adekunle sule street, bashorun town, majek, Lagos state
-                  </p>
-                </div>
-                <div className="flex gap-2 items-center justify-center">
-                  <div className="">
-                    <img
-                      src="/icons/location.svg"
-                      alt="location icon"
-                      className="w-6 h-6/12"
-                    />
-                  </div>
-                  <p>
-                    15E Road 22, Ikota Villa Estate, Lekki-Ajah, Lagos State
-                  </p>
-                </div>
+                 
+                
                 <div className="flex gap-2 items-center justify-start">
                   <div className="">
                     <img
@@ -66,20 +58,37 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-3 max-w-60">
-              <h4 className="text-lg text-primary font-semibold">Company</h4>
-              {navLinks.map((item, index) => (
-                <Link
-                  to={item.href}
-                  className={
-                    "text-xl sm:text-sm font-medium  :border-0   px-4 text-gray-200  capitalize"
-                  }
-                  key={index}
-                >
-                  {" "}
-                  {item.name}
-                </Link>
-              ))}
+            <div className=" w-full xs:w-70 flex flex-col  gap-4">
+              <h4 className="text-lg text-primary font-semibold">Address</h4>
+              <div className="flex flex-col gap-3 text-gray-200">
+                <div className="flex gap-2 items-center justify-center">
+                  <div className="">
+                    <img
+                      src="/icons/location.svg"
+                      alt="location icon"
+                      className="w-6 h-6/12"
+                    />
+                  </div>
+                  <p>
+                    1, Adekunle sule street, bashorun town, majek, Lagos state
+                  </p>
+                </div>
+                <div className="flex gap-2 items-center justify-center">
+                  <div className="">
+                    <img
+                      src="/icons/location.svg"
+                      alt="location icon"
+                      className="w-6 h-6/12"
+                    />
+                  </div>
+                  <p>
+                    15E Road 22, Ikota Villa Estate, Lekki-Ajah, Lagos State
+                  </p>
+                </div>
+               
+               
+                 
+              </div>
             </div>
           </div>{" "}
           <div className="text-xs font-medium text-white text-center py-4 px-4 border-t border-gray-200 flex flex-col  sm:flex-row sm:justify-between items-center gap-4">
