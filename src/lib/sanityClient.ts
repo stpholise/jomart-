@@ -16,6 +16,7 @@ export const fetchProjects = async () => {
         slug,
         completed,
         location,
+        "coverImage": gallery[0].asset->url,
         gallery[]{
             asset->{
             _id,
@@ -31,7 +32,8 @@ export const fetchProjects = async () => {
 };
 
 export const fetchProjectData = async (slug: string) => {
-  return sanityClient.fetch(`
+  return sanityClient.fetch(
+    `
     *[_type == "project" && slug.current == $slug][0] {
       _id,
         name,
@@ -45,10 +47,20 @@ export const fetchProjectData = async (slug: string) => {
             },
             caption
         },
-        video,
+         "coverImage": gallery[0].asset->url,
         description,
         vision,
+        videos[]{
+          file{
+            asset->{
+            _id, 
+            url
+            }
+         }
+        }
     }
     
-    `, {slug});
+    `,
+    { slug },
+  );
 };

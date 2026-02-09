@@ -119,9 +119,9 @@ const Home = () => {
                   ` border  h-full bg-gray-50 shadow hover:shadow-xl border-gray-200 overflow-hidden cursor-pointer  rounded-lg flex flex-col gap-2  bg-cover bg-center`,
                 )}
               >
-                <div className="w-full rounded-t-lg  min-h-45 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
+                <div className="w-full rounded-t-lg  min-h-45 max-h-46 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
                   <img
-                    src={`${item.gallery[0].asset.url}`}
+                    src={`${item.coverImage}`}
                     alt="image"
                     className="h-full rounded-t-lg object-cover w-full  "
                   />

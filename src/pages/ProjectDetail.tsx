@@ -3,6 +3,7 @@ import { useProjectData } from "../hooks/useProjects";
 import { TrippleSpiner } from "../components/utils/Loading";
 import Carousel from "react-multi-carousel";
 import PortableTextRender from "../lib/PortableTextRender";
+import ReadyToStart from "../components/cards/ReadyToStart";
 
 const responsive = {
   desktop: {
@@ -31,20 +32,26 @@ const ProjectDetail = () => {
         ) : error ? (
           <div className="h-60"></div>
         ) : projectData ? (
-          <div className="">
+          <div className=" flex flex-col gap-12 md:gap-16 mb-8">
             <div className="h-50 sm:h-100 overflow-hidden">
-              <img src={projectData.gallery[0].asset.url} alt="" className="object-cover w-full h-full" />
+              <img
+                src={projectData.gallery[0].asset.url}
+                alt="cover image"
+                className="object-cover w-full h-full"
+              />
             </div>
 
-            <div className="flex flex-col sm:flex-row  px-4 w-full py-12 md:py-16 lg:gap-10 sm:gap-9 gap-8">
+            <div className="container mx-auto flex flex-col md:flex-row  px-4 w-full  lg:gap-12 sm:gap-14 gap-8">
               <div className="">
                 <h2 className="text-3xl font-bold capitalize pt-4  text-secondary">
                   {projectData.name}
                 </h2>
-                <p className=" text-secondary font-medium py-2">{projectData.location}</p>
+                <p className=" text-secondary font-medium py-2">
+                  {projectData.location}
+                </p>
                 <PortableTextRender value={projectData.description} />
               </div>
-              <div className=" sm:min-w-86 sm:max-w-86 h-fit  border border-secondary rounded-lg px-4 py-6  shadow">
+              <div className=" md:min-w-86 sm:max-w-86 h-fit  border border-secondary rounded-lg px-4 py-6  shadow">
                 <h4 className="text-xl text-secondary font-semibold py-4 mt-6">
                   Vision
                 </h4>
@@ -52,23 +59,60 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            <div className="container mx-auto min-h-60 py-10 mb-5">
-              <Carousel
-                swipeable
-                arrows
-                className="w-full"
-                autoPlay
-                responsive={responsive}
-                autoPlaySpeed={3000}
-                infinite={true}
-                transitionDuration={600}
-              >
-                {projectData.gallery.map((item) => (
-                  <div className="" key={item.asset._id}>
-                    <img src={item.asset.url} alt="" />
-                  </div>
-                ))}
-              </Carousel>
+            {projectData.gallery && (
+              <div className="container mx-auto min-h-60  max-h-60  py-4 bg-secondary rounded-lg px-4">
+                <Carousel
+                  swipeable
+                  arrows
+                  className="w-full h-full overflow-hidden max-h-60 rounded-lg"
+                  autoPlay
+                  responsive={responsive}
+                  autoPlaySpeed={3500}
+                  infinite={true}
+                  transitionDuration={600}
+                >
+                  {projectData.gallery.map((item) => (
+                    <div className="h-full w-full" key={item.asset._id}>
+                      <img
+                        src={item.asset.url}
+                        alt="image"
+                        className="  w-full h-60 max-h-52  object-cover"
+                      />
+                    </div>
+                  ))}
+                </Carousel>
+              </div>
+            )}
+            {projectData.videos && (
+              <div className="container mx-auto px-4   h-60 ">
+                <Carousel
+                  swipeable
+                  arrows
+                  className="w-full"
+                  responsive={responsive}
+                  infinite={true}
+                >
+                  {projectData.videos &&
+                    projectData.videos.map((item) => {
+                      if (!item.file?.asset?.url) return;
+                      return (
+                        <div className="">
+                          <video
+                            src={item.file.asset.url}
+                            loop
+                            muted
+                            autoPlay
+                            preload="metadata"
+                            className="w-99 h-60 max-h-52 rounded-lg object-cover "
+                          />
+                        </div>
+                      );
+                    })}
+                </Carousel>
+              </div>
+            )}
+            <div className="container mx-auto px-4">
+              <ReadyToStart />
             </div>
           </div>
         ) : (

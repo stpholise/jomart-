@@ -15,6 +15,7 @@ export interface ProjectType {
   vision: string;
   completed: boolean;
   location: string;
+  coverImage: string;
   gallery: {
     asset: {
       _id: string;
@@ -23,7 +24,14 @@ export interface ProjectType {
     caption: string;
   }[];
 
-  video?: string;
+  videos?: {
+    file?: {
+      asset: {
+        url: string;
+        id: string;
+      }
+    }
+  }[];
 }
 
 export const useProjects = () => {
@@ -63,6 +71,7 @@ export const useProjectData = (slug?: string) => {
       setLoading(true);
       const data = await fetchProjectData(slug);
       setProjectData(data);
+      console.log(data)
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to fetch projects");
     } finally {
