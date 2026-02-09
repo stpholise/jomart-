@@ -28,7 +28,7 @@ const Projects = () => {
             )}
           >
             <div className="w-99 h-60 overflow-hidden sm:min-h-70 sm:min-w-80 ">
-              <img src={item.gallery[0].asset.url} alt="project-image" loading="lazy" className="w-full h-full sm:min-h-full sm:min-w-full  object-cover" />
+              <img src={item.coverImage} alt="project-image" loading="lazy" className="w-full min-h-70 h-full sm:min-h-full sm:min-w-full  object-cover" />
             </div>
             <div className="flex flex-col px-4 py-6 gap-4 sm:gap-4 ">
               <h4 className="text-xl font-semibold sm:mt-2 text-secondary">{item.name}</h4>

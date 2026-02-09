@@ -157,24 +157,7 @@ const RequestForm = ({
                       className="text-red-500"
                     />
                   </div>
-
-                  {/* FLOORS
-                  <div>
-                    <label className="block">Number of Floors</label>
-                    <Field
-                      name="num_of_floors"
-                      type="number"
-                      min={1}
-                      className="border border-gray-200 bg-gray-100 p-2 w-full rounded outline-none"
-                    />
-                    <ErrorMessage
-                      name="num_of_floors"
-                      component="div"
-                      className="text-red-500"
-                    />
-                  </div> */}
-
-                  {/* BUILDING TYPE */}
+ 
                   <div>
                     <label className="block">Building Type</label>
                     <Field
@@ -254,7 +237,7 @@ const RequestForm = ({
       </div>
       <div
         onClick={() => setOpenRequestForm(false)}
-        className="z-50 fixed top-0 right-0 left-0 bottom-0 bg-[rgba(0,0,0,0.3)]"
+        className="z-100 fixed top-0 right-0 left-0 bottom-0 bg-[rgba(0,0,0,0.3)]"
       ></div>
     </>
   );
