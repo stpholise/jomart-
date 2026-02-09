@@ -11,7 +11,7 @@ const Projects = () => {
   return (
     <div className="py-16">
       <div className="">
-        <h2 className="text-center font-semibold text-3xl my-4 text-primary">
+        <h2 className="text-center font-semibold text-3xl uppercase my-4 text-secondary">
           {" "}
           Our Projects{" "}
         </h2>
