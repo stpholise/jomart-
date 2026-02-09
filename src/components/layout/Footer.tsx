@@ -85,9 +85,6 @@ const Footer = () => {
                     15E Road 22, Ikota Villa Estate, Lekki-Ajah, Lagos State
                   </p>
                 </div>
-               
-               
-                 
               </div>
             </div>
           </div>{" "}

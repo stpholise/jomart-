@@ -2,7 +2,6 @@ import clsx from "clsx";
 import ReadyToStart from "../components/cards/ReadyToStart";
 import { TrippleSpiner } from "../components/utils/Loading";
 import { useProjects } from "../hooks/useProjects";
-// import type { ProjectType } from "../hooks/useProjects";
 import { useNavigate } from "react-router";
 const Projects = () => {
 
@@ -11,7 +10,7 @@ const Projects = () => {
   return (
     <div className="py-16">
       <div className="">
-        <h2 className="text-center font-semibold text-3xl my-4 text-primary">
+        <h2 className="text-center font-semibold text-3xl uppercase my-4 text-secondary">
           {" "}
           Our Projects{" "}
         </h2>
