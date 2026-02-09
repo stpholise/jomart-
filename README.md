@@ -26,5 +26,5 @@ Jomart Engineering is a portfolio website showcasing various engineering project
 
 ## Live Demo
 
-[Live preview](jomart-one.vercel.app)
+[Live preview](https://jomart-one.vercel.app)
 
