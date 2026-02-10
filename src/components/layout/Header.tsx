@@ -20,7 +20,7 @@ const Header = () => {
         <Link to={"/"} className="logo">
           <img
             src="/jomart.png"
-            alt="logo"
+            alt="Jomart Engineering logo"
             fetchPriority="high"
             className="w-30 h-15"
           />

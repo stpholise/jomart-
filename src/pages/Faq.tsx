@@ -1,13 +1,23 @@
 import FaqCard from "../components/cards/FaqCard";
 import ReadyToStart from "../components/cards/ReadyToStart";
+import { useEffect } from "react";
+import { setSeo } from "../lib/seo";
+
 const Faq = () => {
+
+  useEffect(() => {
+    setSeo(
+      "FAQs | Jomart Engineering",
+      "Frequently asked questions about Jomart Engineering services, project execution, timelines, safety standards, and engineering practices in Nigeria."
+    )
+  }, [])
   return (
     <div className="">
       <div className="container mx-auto my-12">
-        <h2 className="font-bold text-primary text-3xl text-center mb-4 ">
+        <h1 className="font-bold text-secondary text-3xl text-center mb-4 ">
           Frequently Asked Questions
-        </h2>
-        <p className="font-medium text-center">
+        </h1>
+        <p className="font-medium text-center w-full mx-auto sm:w-99">
           Find answers to common questions about our services and more.
         </p>
       </div>

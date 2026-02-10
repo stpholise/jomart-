@@ -3,17 +3,24 @@ import Feedbacks from "../components/utils/Feedbacks";
 import Hero from "../components/layout/Hero";
 import RequestForm from "../components/layout/RequestForm";
 import { Link } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TrippleSpiner } from "../components/utils/Loading";
 import { useProjects } from "../hooks/useProjects";
 import type { ProjectType } from "../hooks/useProjects";
 import { useNavigate } from "react-router";
 import ErrorCard from "../components/cards/ErrorCard";
+import { setSeo } from "../lib/seo";
 
 const Home = () => {
   const [openRequestForm, setOpenRequestForm] = useState(false);
   const { projects, loading, error, refetch } = useProjects();
   const navigate = useNavigate();
+  useEffect(() => {
+    setSeo(
+      "Jomart Engineering | Civil & Structural Engineering Company in Nigeria",
+      "Jomart Engineering provides professional civil, structural, and construction engineering services across Nigeria. Trusted, reliable, and innovative.",
+    );
+  }, []);
 
   return (
     <div className="">
@@ -125,7 +132,7 @@ const Home = () => {
                 <div className="w-full rounded-t-lg  min-h-45 max-h-46 bg-[rgba(0,0,0,0.5)] flex items-center justify-center">
                   <img
                     src={`${item.coverImage}`}
-                    alt="image"
+                    alt="Modern architectural building design by Jomart Engineering"
                     className="h-full rounded-t-lg object-cover w-full  "
                   />
                 </div>
