@@ -1,6 +1,9 @@
 import LeafletMap from "../components/utils/LeafletMap";
 import { Formik, Form, Field } from "formik";
 import type { FormikHelpers } from "formik";
+import { useEffect } from "react";
+import { setSeo } from "../lib/seo";
+
 
 interface FormValuesType {
   name: string;
@@ -9,6 +12,14 @@ interface FormValuesType {
   message: string;
 }
 const Contact = () => {
+
+    useEffect(() => {
+    setSeo(
+      "Contact Jomart Engineering | Get in Touch with Our Engineers",
+      "Contact Jomart Engineering for professional engineering consultation, project inquiries, and construction services anywhere in Nigeria."
+    )
+  }, [])
+
   const initialValues: FormValuesType = {
     name: "",
     phone: "",
@@ -43,20 +54,22 @@ const Contact = () => {
 
     setSubmitting(false);
   };
+
+
   return (
-    <div className="bg-gray-50 pb-14">
+    <div className=" pb-14">
       <div className="container mx-auto pt-16 ">
-        <h2 className="font-bold text-secondary uppercase text-2xl mx-auto text-center mb-6 ">
+        <h1 className="font-bold text-secondary uppercase text-2xl mx-auto text-center mb-6 ">
           Contact
-        </h2>
-        <p className="font-medium  w-80 text-center mx-auto ">
+        </h1>
+        <p className="font-medium w-full sm:w-80 text-center mx-auto ">
          Email, call or complete the form to learn how Jomart can help you 
         </p>
       </div>
       <div className=" ">
-        <div className="grid md:grid-cols-[40%_50%] items-center justify-center container  sm:bg-logo-light/80  mx-auto my-8 sm:my-12  sm:py-12 px-4 gap-6  rounded-2xl">
-          <div className="w-full md:w-80  px-4 grid grid-cols-1  gap-3 bg-logo-light/80 sm:bg-transparent rounded-xl">
-            <div className=" text-white tex-sm      px-4 py-4 rounded-md   flex-col  flex gap-2">
+        <div className="grid md:grid-cols-[40%_50%] items-center justify-center container   mx-auto my-8 sm:mb-12  sm:py-8 px-4 gap-6  rounded-2xl">
+          <div className="w-full md:w-80  px-4 grid grid-cols-1  gap-3  sm:bg-transparent rounded-xl">
+            <div className=" text-black tex-sm      px-4 py-4 rounded-md   flex-col  flex gap-2">
               <div className="text-lg font-semibold text-secondary mt-6 mb-3 flex gap-2">
                 Phone Number
               </div>
@@ -90,14 +103,14 @@ const Contact = () => {
               </div>
             </div>
             <div className=" text-white tex-sm    px-4 py-4 rounded-md   flex-col flex gap-2">
-              <div className="flex flex-col gap-3 text-white">
+              <div className="flex flex-col gap-3 text-black">
                 <div className="text-lg font-semibold text-secondary mt-6 mb-3 flex gap-2">
                   Address
                 </div>
                 <div className="flex gap-2 items-center justify-start">
                   <div className="">
                     <img
-                      src="/icons/location.svg"
+                      src="/icons/location-dark.svg"
                       alt="location icon"
                       className="w-6 h-6/12"
                     />
@@ -109,7 +122,7 @@ const Contact = () => {
                 <div className="flex gap-2 items-center justify-start">
                   <div className="">
                     <img
-                      src="/icons/location.svg"
+                      src="/icons/location-dark.svg"
                       alt="location icon"
                       className="w-6 h-6/12"
                     />
@@ -120,7 +133,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            <div className=" text-white tex-sm    px-4 py-4 rounded-md   flex-col flex gap-2 sm:min-w-80">
+            <div className=" text-black tex-sm    px-4 py-4 rounded-md   flex-col flex gap-2 sm:min-w-80">
                <div className="text-lg font-semibold text-secondary mt-6 mb-3 flex gap-2">
                   Business Hours
                 </div>
@@ -137,7 +150,7 @@ const Contact = () => {
                 <p>24/7</p>
               </div>
             </div>
-            <div className=" text-white     tex-sm    px-4 py-4 rounded-md   flex-col flex gap-2">
+            <div className=" text-black     tex-sm    px-4 py-4 rounded-md   flex-col flex gap-2">
               <div className="text-lg font-semibold text-secondary mt-6 mb-3 flex gap-2">
                  Email
               </div>

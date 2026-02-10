@@ -5,6 +5,9 @@ import Carousel from "react-multi-carousel";
 import PortableTextRender from "../lib/PortableTextRender";
 import ReadyToStart from "../components/cards/ReadyToStart";
 import ErrorCard from "../components/cards/ErrorCard";
+import { useEffect } from "react";
+import { setSeo } from "../lib/seo";
+
 
 const responsive = {
   desktop: {
@@ -25,6 +28,16 @@ const ProjectDetail = () => {
 
   const { projectData, loading, error, refetch } = useProjectData(slug);
 
+  useEffect(() => {
+    if(!projectData) return
+
+    setSeo(
+      `${projectData.name} | Jomart Engineering`,
+         
+        `Engineering project executed by Jomart Engineering in ${projectData.location}, Nigeria.`
+    )
+  },[projectData])
+
   return (
     <div className="min-h-100 ">
       <div className="container mx-auto relative min-h-80 ">
@@ -40,16 +53,16 @@ const ProjectDetail = () => {
               <div className="h-50 sm:h-100 overflow-hidden">
                 <img
                   src={projectData.gallery[0].asset.url}
-                  alt="cover image"
+                  alt="Modern architectural building design by Jomart Engineering"
                   className="object-cover w-full h-full"
                 />
               </div>
 
               <div className="container mx-auto flex flex-col md:flex-row  px-4 w-full  lg:gap-12 sm:gap-14 gap-8">
                 <div className="">
-                  <h2 className="text-3xl font-bold capitalize pt-4  text-secondary">
+                  <h1 className="text-3xl font-bold capitalize pt-4  text-secondary">
                     {projectData.name}
-                  </h2>
+                  </h1>
                   <p className=" text-secondary font-medium py-2">
                     {projectData.location}
                   </p>
@@ -79,7 +92,7 @@ const ProjectDetail = () => {
                       <div className="h-full w-full" key={item.asset._id}>
                         <img
                           src={item.asset.url}
-                          alt="image"
+                          alt="Modern architectural building design by Jomart Engineering"
                           className="  w-full h-60 max-h-52  object-cover"
                         />
                       </div>

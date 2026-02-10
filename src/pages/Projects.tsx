@@ -3,18 +3,31 @@ import ReadyToStart from "../components/cards/ReadyToStart";
 import { TrippleSpiner } from "../components/utils/Loading";
 import { useProjects } from "../hooks/useProjects";
 import { useNavigate, Link } from "react-router";
-import ErrorCard from "../components/cards/ErrorCard"; 
+import ErrorCard from "../components/cards/ErrorCard";
+import { useEffect } from "react";
+import { setSeo } from "../lib/seo";
 
 const Projects = () => {
   const { projects, loading, error, refetch } = useProjects();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setSeo(
+      "Projects | Jomart Engineering",
+      "Engineering and construction projects executed by Jomart Engineering in Nigeria.",
+    );
+  }, []);
+
   return (
     <div className="py-16">
       <div className="">
-        <h2 className="text-center font-semibold text-3xl uppercase my-4 text-secondary">
-          {" "}
-          Our Projects{" "}
-        </h2>
+        <h1 className="font-bold text-secondary uppercase text-2xl mx-auto text-center mb-6 ">
+          Our Projects
+        </h1>
+        <p className="font-medium w-full sm:w-80 text-center mx-auto ">
+          Engineering and construction projects executed by Jomart Engineering
+          in Nigeria.
+        </p>
       </div>
       <div className="container mx-auto px-4 flex flex-col gap-7 sm:gap-12 my-12 min-h-80 relative">
         {loading ? (
@@ -26,7 +39,6 @@ const Projects = () => {
         ) : (
           projects &&
           projects.map((item, index) => (
-            
             <div
               data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
               data-aos-duration="600"
@@ -36,16 +48,22 @@ const Projects = () => {
                 index % 2 == 0 ? "sm:flex-row-reverse" : "sm:flex-row",
               )}
             >
-              <Link to={`/projects/${item.slug.current}`} className="w-99 h-60 overflow-hidden sm:min-h-70 sm:min-w-80 ">
+              <Link
+                to={`/projects/${item.slug.current}`}
+                className="w-99 h-60 overflow-hidden sm:min-h-70 sm:min-w-80 "
+              >
                 <img
                   src={item.coverImage}
-                  alt="project-image"
+                  alt="Modern architectural building design by Jomart Engineering"
                   loading="lazy"
                   className="w-full min-h-70 h-full sm:min-h-full sm:min-w-full  object-cover"
                 />
               </Link>
               <div className="flex flex-col px-4 py-6 gap-4  sm:gap-4 ">
-                <Link to={`/projects/${item.slug.current}`} className="text-xl font-semibold sm:mt-2 text-secondary">
+                <Link
+                  to={`/projects/${item.slug.current}`}
+                  className="text-xl font-semibold sm:mt-2 text-secondary"
+                >
                   {item.name}
                 </Link>
                 <p className=" text-sm">{item.vision}</p>

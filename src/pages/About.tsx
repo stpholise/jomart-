@@ -1,8 +1,16 @@
 import CarouselComponent from "../components/utils/CarouselComponent";
 import ReadyToStart from "../components/cards/ReadyToStart";
 import OurTeams from "../components/OurTeams";
+import { setSeo } from "../lib/seo";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    setSeo(
+      "About Jomart Engineering | Engineering Excellence in Nigeria",
+      "Learn about Jomart Engineering, our mission, values, and experienced engineers delivering quality civil and structural projects across Nigeria.",
+    );
+  }, []);
   return (
     <div>
       <div className="flex flex-col gap-3 pt-12 pb-8 px-4 container mx-auto">
@@ -10,9 +18,9 @@ const About = () => {
           <div className="flex gap-4 sm:flex-row flex-col  py-4 sm:gap-9 md:gap-12 md:mt-12 items-center">
             <div className="">
               <h3 className="text-sm font-medium text-gray-500">ABOUT US</h3>
-              <h4 className="text-logo-blue text-xl font-medium md:text-3xl mb-2">
+              <h2 className="text-logo-blue text-xl font-medium md:text-3xl mb-2">
                 Who We Are
-              </h4>
+              </h2>
               <p className="text-gray-800 text-sm font-normal md:text-lg md:font-medium">
                 Jomart Engineering Services Ltd is a premier provider of
                 integrated construction solutions, combining decades of
@@ -25,7 +33,7 @@ const About = () => {
             <div className="sm:min-w-60 md:min-w-79 w-full h-40 sm:h-80 rounded-lg overflow-hidden">
               <img
                 src="/images/construction_site_stock_image.jpeg"
-                alt="construction site"
+                alt="Modern architectural building design by Jomart Engineering"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -35,7 +43,7 @@ const About = () => {
               <div className="sm:min-w-60 md:min-w-79 w-full h-40 sm:h-80 rounded-lg overflow-hidden">
                 <img
                   src="/images/contruction_bien.jpeg"
-                  alt="construction site"
+                  alt="Modern architectural building design by Jomart Engineering"
                   className="w-full h-full object-cover"
                 />
               </div>
