@@ -39,45 +39,39 @@ const Projects = () => {
         ) : (
           projects &&
           projects.map((item, index) => (
-            <div
+            <Link
+                to={`/projects/${item.slug.current}`}
               data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
               data-aos-duration="600"
               data-aos-once="true"
               className={clsx(
-                "flex gap-6 sm:gap-8 border h-fit border-gray-300 shadow-xl rounded-lg flex-col overflow-hidden bg-gray-50",
+                "flex relative gap-6 sm:gap-8 border h-120 max-h-120 border-gray-300 shadow-xl rounded-lg flex-col overflow-hidden bg-gray-50",
                 index % 2 == 0 ? "sm:flex-row-reverse" : "sm:flex-row",
               )}
             >
-              <Link
-                to={`/projects/${item.slug.current}`}
-                className="w-99 h-60 overflow-hidden sm:min-h-70 sm:min-w-80 "
-              >
+              
+              <div className="bg-black/10 w-full h-full">
                 <img
                   src={item.coverImage}
                   alt="Modern architectural building design by Jomart Engineering"
                   loading="lazy"
                   className="w-full min-h-70 h-full sm:min-h-full sm:min-w-full  object-cover"
                 />
-              </Link>
-              <div className="flex flex-col px-4 py-6 gap-4  sm:gap-4 ">
+
+              </div>
+              <div className="flex flex-col px-4 py-6 gap-4 absolute bottom-0  max-w-sm bg-white/80 sm:gap-4 ">
                 <Link
                   to={`/projects/${item.slug.current}`}
-                  className="text-xl font-semibold sm:mt-2 text-secondary"
+                  className="text-lg  font-semibold sm:mt-2 text-secondary"
                 >
                   {item.name}
                 </Link>
-                <p className=" text-sm">{item.vision}</p>
+                <p className=" text-xs">{item.vision}</p>
                 <div className="mt-auto flex flex-col w-full gap-3  justify-between flex-start">
-                  <button
-                    onClick={() => navigate(`/projects/${item.slug.current}`)}
-                    className="mt-auto cursor-pointer bg-secondary  rounded-lg max-w-70   w-fit text-sm font-medium text-white py-2 px-10"
-                  >
-                    {" "}
-                    See More{" "}
-                  </button>
+                
                 </div>
               </div>
-            </div>
+            </Link>
           ))
         )}
       </div>
