@@ -2,15 +2,14 @@ import clsx from "clsx";
 import ReadyToStart from "../components/cards/ReadyToStart";
 import { TrippleSpiner } from "../components/utils/Loading";
 import { useProjects } from "../hooks/useProjects";
-import { useNavigate, Link } from "react-router";
+import {  Link } from "react-router";
 import ErrorCard from "../components/cards/ErrorCard";
 import { useEffect } from "react";
 import { setSeo } from "../lib/seo";
 
 const Projects = () => {
   const { projects, loading, error, refetch } = useProjects();
-  const navigate = useNavigate();
-
+ 
   useEffect(() => {
     setSeo(
       "Projects | Jomart Engineering",

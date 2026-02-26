@@ -12,11 +12,11 @@ import { setSeo } from "../lib/seo";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
+    items: 2,
   },
   tablet: {
     breakpoint: { max: 1024, min: 460 },
-    items: 3,
+    items: 2,
   },
   mobile: {
     breakpoint: { max: 460, min: 0 },
@@ -40,7 +40,7 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-100 ">
-      <div className="container mx-auto relative min-h-80 ">
+      <div className="relative min-h-80 ">
         {loading ? (
           <TrippleSpiner />
         ) : error ? (
@@ -77,11 +77,11 @@ const ProjectDetail = () => {
               </div>
 
               {projectData.gallery && (
-                <div className="container mx-auto min-h-60  max-h-60  py-4 bg-secondary rounded-lg px-4">
+                <div className="container mx-auto min-h-100  max-h-100  py-4 md:bg-secondary rounded-lg sm:px-4">
                   <Carousel
                     swipeable
                     arrows
-                    className="w-full h-full overflow-hidden max-h-60 rounded-lg"
+                    className="w-full h-full overflow-hidden max-h-100 rounded-lg"
                     autoPlay
                     responsive={responsive}
                     autoPlaySpeed={3500}
@@ -93,7 +93,7 @@ const ProjectDetail = () => {
                         <img
                           src={item.asset.url}
                           alt="Modern architectural building design by Jomart Engineering"
-                          className="  w-full h-60 max-h-52  object-cover"
+                          className="  w-full h-90 max-h-92  object-cover"
                         />
                       </div>
                     ))}
